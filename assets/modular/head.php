@@ -24,7 +24,7 @@
     <!-- Material Design Bootstrap -->
     <link href="assets/MDB Pro/css/mdb.min.css" rel="stylesheet">
     
-    <!-- Pace -->
+    <!-- Pace,js -->
     <link href="assets/css/pace.css" rel="stylesheet">
     
     <link href="assets/css/style.css" rel="stylesheet">

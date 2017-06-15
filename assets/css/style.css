@@ -71,8 +71,23 @@ nav .logged.dropdown .dropdown-item.red-text:hover {
 
 /* intro-card */
 .intro.card-wrapper {
-    max-height: 425px;
-    padding-top: 4rem;
+    max-height: 395px;
+    padding-top: 4.5rem;
+}
+
+/* modal-content Modal */
+#login-reg-fgtpass .modal-content {
+    min-width: 38rem;
+}
+
+@media (max-width: 768px) {
+    #login-reg-fgtpass .modal-content {
+        min-width: initial;
+    }
+}
+
+#fgtpass-step-2, #fgtpass-step-3 {
+    display: none;
 }
 
 /*Footer*/

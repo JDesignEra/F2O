@@ -1,3 +1,6 @@
+<!--FUTURE Add Register, Login & Forgot Password functions-->
+<!--FUTURE Populate Newest F2O Members section-->
+
 <!DOCTYPE html>
 <html lang="en">
     <?php
@@ -35,12 +38,12 @@
                                             <h4>Register an account today!</h4>
                                             <hr>
                                             <p>
-                                                Register an account with us today as a freelancer, and get hired by various organisations for you skillsets. With a <strong>F2O</strong> account, you will never have to worry about looking for clients for yourself. Instead, clients will be looking for you. Register an account and set up your profile with us today.<br/>
-                                                <br/>
-                                                <span class="red-text">
-                                                    *<small>Organisation do not require an account to hire freelancers.</small>
-                                                </span>
+                                                Register an account with us today as a freelancer, and get hired by various organisations for you skillsets. With a <strong>F2O</strong> account, you will never have to worry about looking for clients for yourself. Instead, clients will be looking for you. Register an account and set up your profile with us today.
                                             </p>
+                                            <br/>
+                                            <div class="text-center red-text">
+                                                *<small>Organisation do not require an account to hire freelancers.</small>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -81,10 +84,10 @@
                                                 <div class="text-center">
                                                     <button class="btn btn-cyan">Register</button>
                                                 </div>
-                                                <br/>
-                                                <span class="red-text">
+                                                
+                                                <div class="text-center red-text">
                                                     *<small>Organisation do not require an account to hire freelancers.</small>
-                                                </span>
+                                                </div>
                                             </div>
 
                                         </div>
@@ -96,7 +99,9 @@
                                             <div class="content">
                                                 <h4><i class="fa fa-sign-in"></i> Login</h4>
                                                 <a><i class="fa fa-close rotate-btn" data-card="intro-card"></i></a>
-                                                <hr>
+                                                
+                                                <hr style="padding-bottom: 3rem;">
+                                                
                                                 <div class="md-form">
                                                     <i class="fa fa-envelope prefix"></i>
                                                     <input type="email" id="l-email" class="form-control">
@@ -138,7 +143,7 @@
         
         <?php
             include('assets/modular/footer.php');
-            include('assets/modular/body-script.html');
+            include('assets/modular/script.html');
         ?>
     </body>
 </html>

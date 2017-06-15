@@ -37,7 +37,7 @@
             <div class="col-md-5">
                 <h6 class="title">ABOUT JOEL</h6> 
                 <p>
-                    I am a Freelance Full-Stack Developer with my own branding, <a href="https://jdesignera.com"><u>J.Design</u></a>. I have been in this field since apprixmately 2012. I am skilled in various programming languages and design skills.
+                    I am a Freelance Full-Stack Developer with my own branding, <a href="https://jdesignera.com"><u>J.Design</u></a>. I have been in this field since approximately 2012. I am skilled in various programming languages and design skills.
                 </p>
             </div>
         </div>
@@ -49,12 +49,17 @@
     <div class="social-section">
         <ul>
             <li>
-                <a class="btn-floating btn-small btn-fb" href="https://www.facebook.com/jdesignera"><i class="fa fa-facebook">
+                <a class="btn-floating btn-small btn-fb" href="https://www.facebook.com/jdesignera" target="_blank"><i class="fa fa-facebook">
                     </i>
                 </a>
             </li>
             <li>
-                <a class="btn-floating btn-small btn-li" href="mailto:support@f2o.com">
+                <a class="btn-floating btn-small btn-li" href="https://www.linkedin.com/in/jdesignera/" target="_blank">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="btn-floating btn-small btn-secondary" href="mailto:support@f2o.com">
                     <i class="fa fa-envelope"></i>
                 </a>
             </li>

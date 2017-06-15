@@ -36,7 +36,7 @@
                     else {
                         echo '
                         <!-- Modal Button -->
-                        <button class="btn btn-secondary btn-rounded" data-toggle="modal" data-target="#login-reg" style="max-height:35px; line-height:1;">Login <i class="fa fa-sign-in ml-1"></i></button>
+                        <button class="btn btn-secondary btn-rounded" data-toggle="modal" data-target="#login-reg-fgtpass" style="max-height:35px; line-height:1;">Login <i class="fa fa-sign-in ml-1"></i></button>
                         ';
                     }
                 ?>                
@@ -45,4 +45,4 @@
     </div>
 </nav>
 
-<?php include('assets/modular/login-reg_modal.php');?>
+<?php include('assets/modular/login-reg_modal.html');?>
