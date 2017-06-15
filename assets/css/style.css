@@ -1,0 +1,98 @@
+html, body, header, .view {
+    height: 100% !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+
+button {
+    font-weight: 600 !important;
+}
+
+/* Navigation */
+nav, nav a {
+    font-weight: 400 !important;
+}
+
+nav .nav-item {
+    margin: auto 0;
+}
+
+nav .login.btn-group .dropdown-menu {
+    min-width: 500px;
+    background: transparent;
+    margin-top: 30px;
+}
+
+nav .logged.dropdown .dropdown-item.red-text:hover {
+    background-color: #f44336;
+}
+
+@media (max-width: 991px) {
+    nav .logged.dropdown .dropdown-menu-right {
+        margin-top: 2.5rem;
+        right: auto;
+        left: 0;
+        min-width: 265%;
+        width: 100%;
+    }
+}
+
+.navbar .chip {
+    margin: 0;
+}
+
+/* Intro */
+.view {
+    background: url("../img/social_connect_bg.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+@media (max-width: 991px) {
+    .description {
+        padding-top: 7rem;
+        text-align: center;
+    }
+    
+    header, header .container, .full-bg-img, .view {
+        height: 100% !important;
+        min-height: 1150px !important;
+        position: relative;
+    }
+    
+    img.intro-logo {
+        display: none !important;
+    }
+}
+
+/* intro-card */
+.intro.card-wrapper {
+    max-height: 425px;
+    padding-top: 4rem;
+}
+
+/*Footer*/
+@media (max-width: 768px) {
+    .flex-center {
+        align-items: center;
+    }
+}
+
+@media (max-width: 1200px) {
+    .flex-center {
+        align-items: left;
+    }
+}
+
+footer {
+    font-size: 90%;
+}
+
+footer h6 {
+    font-weight: 500;
+    text-decoration: underline;
+}
