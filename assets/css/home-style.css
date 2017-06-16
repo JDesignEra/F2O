@@ -10,6 +10,20 @@ button {
     font-weight: 600 !important;
 }
 
+.container-fluid {
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+/* Section Heading */
+.section .section-heading {
+    font-size: 200%;
+    color: #1565c0;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    margin-top: 4rem;
+}
+
 /* Section Heading */
 .section-heading {
     color: #1565c0;
