@@ -5,12 +5,11 @@
     
     <title>F2O
         <?php
-            $title = '';
-            if ((isset($title) && $title != '') || !empty($title) || $title != NULL) {
-                echo ' | '. $title;
+            if ((isset($title)) || !empty($title) || $title != null) {
+                echo ' | ' . $title;
             }
             else {
-                echo'';
+                echo '';
             }
         ?>
     </title>
@@ -27,7 +26,15 @@
     <!-- Pace,js -->
     <link href="assets/css/pace.css" rel="stylesheet">
     
-    <link href="assets/css/style.css" rel="stylesheet">
+    <?php
+        if("/index.php" == $_SERVER['REQUEST_URI']) {
+            echo '<link href="assets/css/home-style.css" rel="stylesheet">';
+        }
+    
+        else {
+            echo '<link href="assets/css/style.css" rel="stylesheet">';
+        }
+    ?>
     
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">

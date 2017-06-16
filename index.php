@@ -3,6 +3,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+    <!-- Head, Navigation & Intro Section -->
     <?php
         include('assets/modular/head.php');
     ?>
@@ -141,9 +142,10 @@
             </section>
         </main>
         
+        <!-- Footer & Scripts -->
         <?php
             include('assets/modular/footer.php');
-            include('assets/modular/script.html');
+            include('assets/modular/scripts.html');
         ?>
     </body>
 </html>

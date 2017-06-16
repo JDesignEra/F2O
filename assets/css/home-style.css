@@ -1,3 +1,7 @@
+html, body, header, .view {
+    height: 100% !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
 }
@@ -6,15 +10,10 @@ button {
     font-weight: 600 !important;
 }
 
-main {
-    padding-top: 7rem;
-}
-
 /* Section Heading */
-.section .section-heading {
+.section-heading {
     color: #1565c0;
     font-weight: 500;
-    margin-bottom: 2rem;
 }
 
 /* Navigation */
@@ -48,6 +47,38 @@ nav .logged.dropdown .dropdown-item.red-text:hover {
 
 .navbar .chip {
     margin: 0;
+}
+
+/* Intro */
+.view {
+    background: url("../img/social_connect_bg.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+@media (max-width: 991px) {
+    .description {
+        padding-top: 7rem;
+        text-align: center;
+    }
+    
+    header, header .container, .full-bg-img, .view {
+        height: 100% !important;
+        min-height: 1150px !important;
+        position: relative;
+    }
+    
+    img.intro-logo {
+        display: none !important;
+    }
+}
+
+/* intro-card */
+.intro.card-wrapper {
+    max-height: 395px;
+    padding-top: 4.5rem;
 }
 
 /* login-reg-fgtpass Modal */
