@@ -18,16 +18,10 @@ button {
 /* Section Heading */
 .section .section-heading {
     font-size: 200%;
-    color: #1565c0;
+    color: #2196F3;
     font-weight: 500;
     margin-bottom: 0.5rem;
-    margin-top: 4rem;
-}
-
-/* Section Heading */
-.section-heading {
-    color: #1565c0;
-    font-weight: 500;
+    margin-top: 5rem;
 }
 
 /* Navigation */
@@ -89,13 +83,11 @@ nav .logged.dropdown .dropdown-item.red-text:hover {
     }
 }
 
-/* intro-card */
-.intro.card-wrapper {
-    max-height: 395px;
-    padding-top: 4.5rem;
+/* login-reg-fgtpass Modal */
+#login-reg-fgtpass #panel-login .modal-body, #login-reg-fgtpass #panel-reg .modal-body, #login-reg-fgtpass #panel-fgtpass .modal-body {
+    background-color: #fff;
 }
 
-/* login-reg-fgtpass Modal */
 #login-reg-fgtpass .modal-content {
     min-width: 38rem;
 }
@@ -123,11 +115,25 @@ nav .logged.dropdown .dropdown-item.red-text:hover {
     }
 }
 
-footer {
+footer.page-footer {
     font-size: 90%;
+    margin-top: 0;
 }
 
-footer h6 {
+footer.page-footer h6 {
     font-weight: 500;
     text-decoration: underline;
+}
+
+
+
+/* home.php */
+/* intro-card */
+#home-intro .card-wrapper {
+    max-height: 395px;
+    padding-top: 4.5rem;
+}
+
+#home-intro .card-wrapper .hr-pad {
+    padding-bottom: 2.7rem;
 }

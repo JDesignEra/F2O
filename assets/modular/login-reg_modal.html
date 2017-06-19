@@ -78,7 +78,7 @@
                         </div>
 
                         <div class="text-center form-sm mt-2">
-                            <button class="btn btn-cyan">Register</button>
+                            <button class="btn teal">Register</button>
                         </div>
                         
                         <div class="text-center red-text">
@@ -122,14 +122,24 @@
                     <!-- fgtpass-step-2 -->
                     <div id="fgtpass-step-2">
                         <div class="modal-body">
-                            <div class="md-form form-sm">
+                            <div class="md-form form-sm">                                
                                 <i class="fa fa-unlock-alt prefix"></i>
                                 <input type="number" id="f-code" class="form-control">
                                 <label for="f-code" required>Verification Code</label>
                             </div>
-
+                            
                             <div class="text-center form-sm mt-2">
-                                <button id="btn-fgtpass-verify" class="btn teal">Verify <i class="fa fa-angle-double-right ml-1"></i></button>
+                                <div class="row">
+                                    <div class="col-lg-4 offset-lg-4">
+                                        <button id="btn-fgtpass-verify" class="btn teal">Verify <i class="fa fa-angle-double-right ml-1"></i></button>
+                                    </div>
+                                    
+                                    <div class="col-lg-4">
+                                        <button id="btn-fgtpass-resend" class="btn btn-danger">Resend <i class="fa fa-repeat ml-1"></i></button>
+                                    </div>
+                                </div>
+                                
+                                
                             </div>
                         </div>
                     </div>

@@ -26,7 +26,7 @@
                         </div>
                         
                         <!-- Second Row -->
-                        <div id="intro" class="row">
+                        <div id="home-intro" class="row">
                             <!-- First Col -->
                             <div class="col-lg-6">
                                 <div class="description">
@@ -83,7 +83,7 @@
                                                 </div>
 
                                                 <div class="text-center">
-                                                    <button class="btn btn-cyan">Register</button>
+                                                    <button class="btn teal">Register</button>
                                                 </div>
                                                 
                                                 <div class="text-center red-text">
@@ -101,7 +101,7 @@
                                                 <h4><i class="fa fa-sign-in"></i> Login</h4>
                                                 <a><i class="fa fa-close rotate-btn" data-card="intro-card"></i></a>
                                                 
-                                                <hr style="padding-bottom: 3rem;">
+                                                <hr class="hr-pad">
                                                 
                                                 <div class="md-form">
                                                     <i class="fa fa-envelope prefix"></i>

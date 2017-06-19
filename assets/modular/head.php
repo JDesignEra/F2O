@@ -27,7 +27,7 @@
     <link href="assets/css/pace.css" rel="stylesheet">
     
     <?php
-        if("/index.php" == $_SERVER['REQUEST_URI']) {
+        if($_SERVER['REQUEST_URI'] == "/index.php" || $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] == "localhost/") {
             echo '<link href="assets/css/home-style.css" rel="stylesheet">';
         }
     

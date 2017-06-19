@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav class="navbar navbar-toggleable-md fixed-top navbar-dark bg-primary scrolling-navbar">
+<nav class="navbar navbar-toggleable-md fixed-top navbar-dark bg-primary scrolling-navbar z-depth-1 hoverable">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle Navigation">
         <span class="navbar-toggler-icon"></span>
     </button>

@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Palatino Linotype;
+    src: url('../fonts/Palatino Linotype.ttf');
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
 }
@@ -15,13 +20,19 @@ main {
     padding-right: 35px;
 }
 
+/* Special aml; */
+.special-amp {
+    font-family: 'Palatino Linotype', 'Roboto';
+    color: #0275d8;
+}
+
 /* Section Heading */
 .section .section-heading {
     font-size: 200%;
-    color: #1565c0;
+    color: #2196F3;
     font-weight: 500;
     margin-bottom: 0.5rem;
-    margin-top: 4rem;
+    margin-top: 5rem;
 }
 
 /* Navigation */
@@ -58,6 +69,15 @@ nav .logged.dropdown .dropdown-item.red-text:hover {
 }
 
 /* login-reg-fgtpass Modal */
+#login-reg-fgtpass #panel-login .modal-body, #login-reg-fgtpass #panel-reg .modal-body, #login-reg-fgtpass #panel-fgtpass .modal-body {
+    background-color: #fff;
+}
+
+#login-reg-fgtpass #fgtpass-step-2 .col-lg-4 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 #login-reg-fgtpass .modal-content {
     min-width: 38rem;
 }
@@ -85,11 +105,117 @@ nav .logged.dropdown .dropdown-item.red-text:hover {
     }
 }
 
-footer {
+footer.page-footer {
     font-size: 90%;
+    margin-top: 0;
 }
 
-footer h6 {
+footer.page-footer h6 {
     font-weight: 500;
     text-decoration: underline;
 }
+
+/* footer.php */
+#footer-cc {
+    margin-bottom: 1rem;
+}
+
+/* about.php */
+/* about-f2o section */
+#about #about-f2o.section #abt-mission {
+    background-image: url('../img/mission_bg.png');
+    background-position: center top;
+}
+
+#about #about-f2o.section #abt-vision {
+    background-image: url('../img/vision_bg.png');
+    background-position: center center;
+}
+
+#about #about-f2o.section #abt-background {
+    background-image: url('../img/background_bg.png');
+    background-position: center center;
+}
+
+/* brand-identity section */
+#about #brand-identity.section .height-30 {
+    height: 30px;
+}
+
+/* abt-founder section */
+#about #abt-founder.section #card-founder .card-up {
+    background-image: url('../img/jdesign_card_bg.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 350px;
+}
+
+#about #abt-founder.section .card-wrapper {
+    min-height:  47rem;
+}
+
+#about #abt-founder.section #card-founder .chip img {
+    margin: 0 0 0 -8px;
+    box-shadow: none;
+}
+
+/* contact-us section */
+#about #contact-us.section {
+    margin-bottom: 0;
+}
+
+#about #contact-us.section .card.card-block {
+    padding-top: 40px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#about #contact-us.section .row {
+    margin-left: -35px;
+    margin-right: -35px;
+    padding: 35px;
+    background-image: url('../img/contact-us_bg.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#about #contact-us.section .card.card-block input,
+#about #contact-us.section .card.card-block textarea{
+    border-bottom: 1px solid #757575;
+}
+
+#about #contact-us.section .card.card-block input:focus:not([readonly]),
+#about #contact-us.section .card.card-block textarea:focus:not([readonly]),{
+    border-bottom: 1px solid #2196F3;
+}
+/* email-sub section */
+#about #email-sub.section {
+    margin-bottom: 0;
+}
+
+#about #email-sub.section .content {
+    background-image: url('../img/email-sub_bg.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-left: -35px;
+    margin-right: -35px;
+    padding: 35px;
+}
+
+#about #email-sub.section .content input {
+    border-bottom: 1px solid #757575;
+}
+
+#about #email-sub.section .content input:focus:not([readonly]) {
+    border-bottom: 1px solid #2196F3;
+}
+
+#about #email-sub.section .content .row .col-lg-8 {
+    background-color: rgba(255 ,255 ,255 , 0.7);
+    padding: 35px;
+    border-radius: 8px;
+}
+/* /.about.php */
