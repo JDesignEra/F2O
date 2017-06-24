@@ -39,10 +39,10 @@
                         <button class="btn btn-secondary btn-rounded" data-toggle="modal" data-target="#login-reg-fgtpass" style="max-height:35px; line-height:1;">Login <i class="fa fa-sign-in ml-1"></i></button>
                         ';
                     }
-                ?>                
+                ?>
             </li>
         </ul>
     </div>
 </nav>
 
-<?php include('assets/modular/login-reg_modal.html');?>
+<?php include('assets/modular/login-reg-fgtpass_modal.html');?>

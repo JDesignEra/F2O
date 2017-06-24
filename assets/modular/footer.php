@@ -1,4 +1,4 @@
-<footer class="page-footer center-on-small-only">
+<footer id="footer" class="page-footer center-on-small-only">
     <div class="container-fluid">
         <div class="row">
             <!-- First Col -->

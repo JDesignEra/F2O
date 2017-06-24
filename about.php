@@ -159,7 +159,7 @@
                     <p class="section-description font-italic lead wow fadeIn">Are you curious about the founder of F2O, about his stories, skills, and background?</p>
                     
                     <div class="row justify-content-center">
-                        <div class="col-xl-10 col-lg-12">
+                        <div class="col-xl-9 col-lg-12">
                             <!-- Card -->
                             <div id="card-founder" class="card testimonial-card hoverable wow zoomIn">
                                 
@@ -183,12 +183,13 @@
                                         <a href="mailto:joel@jdesignera.com" class="btn-floating btn-email" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-envelope"></i></a>
                                     </div>
                                     
-                                    <a class="btn-floating btn-action share-toggle primary-color float-right" data-toggle="tooltip" data-placement="top" title="Social Profiles"><i class="fa fa-link"></i></a>
+                                    <a class="btn-floating btn-action share-toggle primary-color float-right" data-toggle="tooltip" data-placement="top" title="Social Profiles"><i class="fa fa-share-alt"></i></a>
                                 </div>
                                 <!-- /.Social buttons -->
                                 
                                 <!-- Photo -->
-                                <div class="avatar wow zoomIn"><img src="assets/img/Joel.jpg" class="rounded-circle img-responsive">
+                                <div class="avatar wow zoomIn">
+                                    <img src="assets/img/Joel.jpg" class="rounded-circle img-responsive">
                                 </div>
                                 
                                 <!-- Content -->
@@ -335,7 +336,7 @@
                         <p class="section-description font-italic white-text lead wow fadeIn">Do you have questions in regards to F2O?</p>
                         
                         <div class="col-lg-10">
-                            <div class="card card-block z-depth-1">
+                            <div class="card card-block z-depth-1 wow zoomIn">
                                 <div class="md-form">
                                     <i class="fa fa-user prefix"></i>
                                     <input id="c-name" type="text" class="form-control">

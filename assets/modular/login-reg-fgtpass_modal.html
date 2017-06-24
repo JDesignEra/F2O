@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!-- Modal -->
+<div id="login-reg-fgtpass" class="modal fade animated pulse" tabindex="-1" role="dialog">
+    <div class="modal-dialog cascading-modal" role="document">
+        <!-- Content -->
+        <div class="modal-content">
+            <!-- Modal Cascading Tabs -->
+            <div class="modal-c-tabs">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs tabs-3 blue darken-1" role="tablist">
+                    <li class="nav-item">
+                        <a id="tab-login" class="nav-link active" data-toggle="tab" href="#panel-login" role="tab"><i class="fa fa-sign-in mr-1"></i> Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="tab-reg" class="nav-link" data-toggle="tab" href="#panel-reg" role="tab"><i class="fa fa-user-plus mr-1"></i> Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="tab-fgtpass" class="nav-link" data-toggle="tab" href="#panel-fgtpass" role="tab"><i class="fa fa-question-circle mr-1"></i> Forgot Password</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Tab panels -->
+            <div class="tab-content">
+                <!--Panel Login-->
+                <div id="panel-login" class="tab-pane fade in show active" role="tabpanel">
+                    <form id="loginForm" method="post">
+                        <!-- Body -->
+                        <div class="modal-body mb-1">
+                            <div class="md-form form-sm">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input id="l-email" name="l-email" type="text" class="form-control">
+                                <label for="l-email">Email</label>
+                            </div>
+
+                            <div class="md-form form-sm">
+                                <i class="fa fa-lock prefix"></i>
+                                <input id="l-pass" name="l-pass" type="password" length="32" class="form-control">
+                                <label for="l-pass" required>Password</label>
+                            </div>
+                            <div class="text-center mt-2">
+                                <button id="l-btn" type="submit" class="btn btn-secondary">Log in</button>
+                            </div>
+                        </div>
+                        <!-- Footer -->
+                        <div class="modal-footer display-footer">
+                            <div class="options text-center text-md-left mt-1">
+                                <p>
+                                    <a id="a-fgtpass" class="blue-text">Forgot Password?</a><br/>
+                                    Don't have an account?
+                                    <a id="a-reg" class="blue-text" data-toggle="tab" href="#panel-reg">Register</a>
+                                </p>
+                            </div>
+
+                            <button class="btn btn-outline-danger btn-rounded waves-effect ml-auto" type="button" data-dismiss="modal">Close <i class="fa fa-times-circle ml-1"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.Panel Login -->
+
+                <!-- Panel Register -->
+                <div id="panel-reg" class="tab-pane fade" role="tabpanel">
+                    <form id="regForm" method="post">
+                        <!-- Body -->
+                        <div class="modal-body">
+                            <div class="md-form form-sm">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input id="r-email" name="r-email" type="text" maxlength="255" class="form-control">
+                                <label for="r-email">Email</label>
+                            </div>
+
+                            <div class="md-form form-sm">
+                                <i class="fa fa-user prefix"></i>
+                                <input id="r-name" name="r-name" type="text" class="form-control">
+                                <label for="r-name">Name</label>
+                            </div>
+
+                            <div class="md-form form-sm">
+                                <i class="fa fa-lock prefix"></i>
+                                <input id="r-pass" name="r-pass" type="password" length="32" class="form-control" >
+                                <label for="r-pass">Password</label>
+                            </div>
+
+                            <div class="text-center form-sm mt-2">
+                                <button id="r-btn" type="submit" class="btn teal">Register</button>
+                            </div>
+
+                            <div class="text-center red-text">
+                                *<small>Organisation do not require an account to hire freelancers.</small>
+                            </div>
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="modal-footer">
+                            <div class="options text-md-left">
+                                <p class="pt-1">
+                                    Already have an account?
+                                    <a id="a-login" class="blue-text" data-toggle="tab" href="#panel-login">Log In</a>
+                                </p>
+                            </div>
+
+                            <button class="btn btn-outline-danger btn-rounded waves-effect ml-auto" type="button" data-dismiss="modal">Close <i class="fa fa-times-circle ml-1"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.Panel Register -->
+
+                <!-- Panel Forgot Password -->
+                <div id="panel-fgtpass" class="tab-pane fade" role="tabpanel">
+                    <!-- Body -->
+                    <!-- fgtpass-step-1 -->
+                    <div id="fgtpass-step-1">
+                        <form id="f-email-form" type="post">
+                            <div class="modal-body">
+                                <div class="md-form form-sm">
+                                    <i class="fa fa-envelope prefix"></i>
+                                    <input id="f-email" name="f-email" type="text" class="form-control">
+                                    <label for="f-email" required>Email</label>
+                                </div>
+
+                                <div class="text-center form-sm mt-2">
+                                    <button id="f-email-btn" type="submit" class="btn btn-secondary">Next <i class="fa fa-angle-double-right ml-1"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.fgtpass-step-1 -->
+
+                    <!-- fgtpass-step-2 -->
+                    <div id="fgtpass-step-2">
+                        <form id="f-code-form" type="post">
+                            <div class="modal-body">
+                                <div class="md-form form-sm">
+                                    <i class="fa fa-unlock-alt prefix"></i>
+                                    <input id="f-code" name="f-code" type="number" class="form-control">
+                                    <label for="f-code" required>Verification Code</label>
+                                </div>
+
+                                <div class="text-center form-sm mt-2">
+                                    <div class="row">
+                                        <div class="col-lg-4 offset-lg-4">
+                                            <button id="f-code-btn" value="f-code-form" class="btn teal">Verify <i class="fa fa-angle-double-right ml-1"></i></button>
+                                        </div>
+
+                                        <div class="col-lg-4">
+                                            <button id="f-code-btn-re" type="reset" class="btn btn-danger">Resend <i class="fa fa-repeat ml-1"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.fgtpass-step-2 -->
+
+                    <!-- fgtpass-step-3 -->
+                    <div id="fgtpass-step-3">
+                        <form id="f-pass-form" type="post">
+                            <div class="modal-body">
+                                <div class="md-form form-sm">
+                                    <i class="fa fa-key prefix"></i>
+                                    <input id="f-pass" name="f-pass" type="password" class="form-control">
+                                    <label for="f-pass" required>New Password</label>
+                                </div>
+
+                                <div class="text-center form-sm mt-2">
+                                    <button id="f-pass-btn" type="submit" class="btn red">Change Password <i class="fa fa-check ml-1"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.fgtpass-step-3 -->
+
+                    <!-- Footer -->
+                    <div class="modal-footer">
+                        <div class="options text-md-left">
+                            <p class="pt-1">
+                                Don't have an account?
+                                <a id="a-reg2" class="blue-text" data-toggle="tab" href="#panel-reg">Register</a>
+                            </p>
+                        </div>
+
+                        <button class="btn btn-outline-danger btn-rounded waves-effect ml-auto" type="button" data-dismiss="modal">Close <i class="fa fa-times-circle ml-1"></i></button>
+                    </div>
+                </div>
+                <!-- /.Panel Forgot Password -->
+            </div>
+        </div>
+        <!-- /.Modal Content -->
+    </div>
+</div>
+<!-- /.Modal -->

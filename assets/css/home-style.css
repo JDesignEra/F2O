@@ -1,8 +1,16 @@
-html, body, header, .view {
+html,
+body,
+header,
+.view {
     height: 100% !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 400;
 }
 
@@ -18,14 +26,15 @@ button {
 /* Section Heading */
 .section .section-heading {
     font-size: 200%;
-    color: #2196F3;
+    color: #2196f3;
     font-weight: 500;
     margin-bottom: 0.5rem;
     margin-top: 5rem;
 }
 
 /* Navigation */
-nav, nav a {
+nav,
+nav a {
     font-weight: 400 !important;
 }
 
@@ -59,7 +68,7 @@ nav .logged.dropdown .dropdown-item.red-text:hover {
 
 /* Intro */
 .view {
-    background: url("../img/social_connect_bg.png") no-repeat center center fixed;
+    background: url('../img/social_connect_bg.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -71,21 +80,26 @@ nav .logged.dropdown .dropdown-item.red-text:hover {
         padding-top: 7rem;
         text-align: center;
     }
-    
-    header, header .container, .full-bg-img, .view {
+
+    header,
+    header .container,
+    .full-bg-img,
+    .view {
         height: 100% !important;
         min-height: 1150px !important;
         position: relative;
     }
-    
+
     img.intro-logo {
         display: none !important;
     }
 }
 
 /* login-reg-fgtpass Modal */
-#login-reg-fgtpass #panel-login .modal-body, #login-reg-fgtpass #panel-reg .modal-body, #login-reg-fgtpass #panel-fgtpass .modal-body {
-    background-color: #fff;
+#login-reg-fgtpass #panel-login .modal-body,
+#login-reg-fgtpass #panel-reg .modal-body,
+#login-reg-fgtpass #panel-fgtpass .modal-body {
+    background-color: #ffffff;
 }
 
 #login-reg-fgtpass .modal-content {
@@ -98,11 +112,12 @@ nav .logged.dropdown .dropdown-item.red-text:hover {
     }
 }
 
-#fgtpass-step-2, #fgtpass-step-3 {
+#fgtpass-step-2,
+#fgtpass-step-3 {
     display: none;
 }
 
-/*Footer*/
+/* Footer */
 @media (max-width: 768px) {
     .flex-center {
         align-items: center;
@@ -124,8 +139,6 @@ footer.page-footer h6 {
     font-weight: 500;
     text-decoration: underline;
 }
-
-
 
 /* home.php */
 /* intro-card */

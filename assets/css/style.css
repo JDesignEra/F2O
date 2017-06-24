@@ -1,9 +1,29 @@
 @font-face {
-    font-family: Palatino Linotype;
-    src: url('../fonts/Palatino Linotype.ttf');
+    font-family: 'Palatino Linotype';
+    src: url('../fonts/Palatino Linotype.eot');
+    src:
+        url('../fonts/Palatino Linotype.woff2') format('woff2'),
+        url('../fonts/Palatino Linotype.eot?#iefix') format('embedded-opentype');
+    font-weight: 400;
+    font-style: normal;
 }
 
-h1, h2, h3, h4, h5, h6 {
+@font-face {
+    font-family: PalatinoLinotype-Italic;
+    src:
+        url('../fonts/PalatinoLinotype-Italic.woff') format('woff'),
+        url('../fonts/PalatinoLinotype-Italic.ttf') format('truetype'),
+        url('../fonts/PalatinoLinotype-Italic.svg#PalatinoLinotype-Italic') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 400;
 }
 
@@ -20,23 +40,29 @@ main {
     padding-right: 35px;
 }
 
-/* Special aml; */
+/* toast */
+#toast-container .toast {
+    width: 350px;
+}
+
+/* Special amp */
 .special-amp {
-    font-family: 'Palatino Linotype', 'Roboto';
+    font-family: 'Palatino Linotype', Roboto;
     color: #0275d8;
 }
 
 /* Section Heading */
 .section .section-heading {
     font-size: 200%;
-    color: #2196F3;
+    color: #2196f3;
     font-weight: 500;
     margin-bottom: 0.5rem;
     margin-top: 5rem;
 }
 
 /* Navigation */
-nav, nav a {
+nav,
+nav a {
     font-weight: 400 !important;
 }
 
@@ -64,13 +90,25 @@ nav .logged.dropdown .dropdown-item.red-text:hover {
     }
 }
 
+nav.double-nav {
+    padding-left: 270px !important;
+}
+
+@media (max-width: 1440px) {
+    nav.double-nav {
+        padding-left: 1rem !important;
+    }
+}
+
 .navbar .chip {
     margin: 0;
 }
 
 /* login-reg-fgtpass Modal */
-#login-reg-fgtpass #panel-login .modal-body, #login-reg-fgtpass #panel-reg .modal-body, #login-reg-fgtpass #panel-fgtpass .modal-body {
-    background-color: #fff;
+#login-reg-fgtpass #panel-login .modal-body,
+#login-reg-fgtpass #panel-reg .modal-body,
+#login-reg-fgtpass #panel-fgtpass .modal-body {
+    background-color: #ffffff;
 }
 
 #login-reg-fgtpass #fgtpass-step-2 .col-lg-4 {
@@ -88,11 +126,12 @@ nav .logged.dropdown .dropdown-item.red-text:hover {
     }
 }
 
-#fgtpass-step-2, #fgtpass-step-3 {
+#fgtpass-step-2,
+#fgtpass-step-3 {
     display: none;
 }
 
-/*Footer*/
+/* Footer */
 @media (max-width: 768px) {
     .flex-center {
         align-items: center;
@@ -152,7 +191,7 @@ footer.page-footer h6 {
 }
 
 #about #abt-founder.section .card-wrapper {
-    min-height:  47rem;
+    min-height: 47rem;
 }
 
 #about #abt-founder.section #card-founder .chip img {
@@ -182,14 +221,15 @@ footer.page-footer h6 {
 }
 
 #about #contact-us.section .card.card-block input,
-#about #contact-us.section .card.card-block textarea{
+#about #contact-us.section .card.card-block textarea {
     border-bottom: 1px solid #757575;
 }
 
 #about #contact-us.section .card.card-block input:focus:not([readonly]),
-#about #contact-us.section .card.card-block textarea:focus:not([readonly]),{
-    border-bottom: 1px solid #2196F3;
+#about #contact-us.section .card.card-block textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #2196f3;
 }
+
 /* email-sub section */
 #about #email-sub.section {
     margin-bottom: 0;
@@ -210,12 +250,233 @@ footer.page-footer h6 {
 }
 
 #about #email-sub.section .content input:focus:not([readonly]) {
-    border-bottom: 1px solid #2196F3;
+    border-bottom: 1px solid #2196f3;
 }
 
 #about #email-sub.section .content .row .col-lg-8 {
-    background-color: rgba(255 ,255 ,255 , 0.7);
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 35px;
     border-radius: 8px;
 }
+
 /* /.about.php */
+
+/* profile.php */
+/* cp-basic */
+#profile #cp-basic.card .card-up {
+    background-image: url('../img/profile/default-card-up.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 350px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+#profile #cp-basic.card .card-up:hover {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url('../img/profile/default-card-up.png');
+}
+
+#profile #cp-basic.card .card-up button#change-cover {
+    padding: 8px 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-transform: capitalize;
+    font-size: 0.75rem;
+    color: #eeeeee !important;
+}
+
+#profile #cp-basic.card .card-up:hover button#change-cover {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #ffffff !important;
+}
+
+#profile #cp-basic.card .card-up button#change-cover:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #ffffff !important;
+}
+
+#profile #cp-basic.card .card-up button#change-cover .fa {
+    font-size: 0.9rem;
+}
+
+#profile #cp-basic.card .avatar {
+    background-image: url('../img/profile/user-default.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 11rem;
+    width: 11rem;
+    margin: -5.5rem auto 0;
+    border-radius: 7%;
+    -webkit-border-radius: 7%;
+}
+
+#profile #cp-basic.card .avatar:hover {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url('../img/profile/user-default.png');
+}
+
+#profile #cp-basic.card .avatar #change-avatar {
+    font-size: 0.75rem;
+    font-weight: 500;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    width: 100%;
+}
+
+#profile #cp-basic.card .avatar #change-avatar i.fa {
+    margin-left: 5px;
+    font-size: 0.9rem;
+}
+
+#profile #cp-basic.card .card-block #name {
+    font-weight: 500;
+}
+
+#profile #cp-basic.card .card-block #title {
+    font-weight: 500;
+}
+
+#profile #cp-basic.card .card-block .md-form label {
+    font-weight: 500;
+}
+
+#profile #cp-basic.card .card-block .md-form ::-webkit-input-placeholder {
+    color: #cccccc !important;
+}
+
+/* cp-msg */
+#profile #cp-msg .card-up {
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: -30px;
+}
+
+#profile #cp-msg .card-up i.fa {
+    padding: 1.7rem;
+    font-size: 2rem;
+    text-align: left;
+    margin-right: 1rem;
+}
+
+#profile #cp-msg .card-up .data {
+    float: right;
+    margin-top: 2.5rem;
+    text-align: right;
+}
+
+#profile #cp-msg p {
+    color: #9e9e9e;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* cp-job */
+#profile #cp-job .card-up {
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: -30px;
+}
+
+#profile #cp-job .card-up i.fa {
+    padding: 1.7rem;
+    font-size: 2rem;
+    text-align: left;
+    margin-right: 1rem;
+}
+
+#profile #cp-job .card-up .data {
+    float: right;
+    margin-top: 2.5rem;
+    text-align: right;
+}
+
+#profile #cp-job p {
+    color: #9e9e9e;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+#profile #misc .col-xl-5.col-lg-6 {
+    margin-top: 2rem;
+}
+
+@media (max-width: 991px) {
+    #profile #basic-detail {
+        margin-bottom: 0;
+    }
+
+    #profile #misc .col-xl-5.col-lg-6 {
+        margin-top: 4rem;
+    }
+}
+
+/* Social Section */
+#profile .card-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #9e9e9e;
+}
+
+#profile #social.section #social-detail .fa {
+    color: #757575;
+}
+
+/* Exxperience Section */
+#profile #experience #exp-detail h5 {
+    font-size: 1.1rem;
+    font-weight: 500 !important;
+}
+
+#profile #experience #exp-detail a.fa,
+#profile #experience #exp-add-detail a.fa {
+    color: #757575;
+}
+
+#profile #experience #exp-detail i.fa.fa-building,
+#profile #experience #exp-add-detail i.fa.fa-building {
+    color: #ffffff;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.32rem;
+    padding-right: 1.11rem; /* stylelint-disable-line */
+    margin-left: 1px;
+}
+
+/* Exxperience Section */
+#profile #education #edu-detail h5 {
+    font-size: 1.1rem;
+    font-weight: 500 !important;
+}
+
+#profile #education #edu-detail a.fa,
+#profile #education #edu-add-detail a.fa {
+    color: #757575;
+}
+
+#profile #education #edu-detail i.fa.fa-book,
+#profile #education #edu-add-detail i.fa.fa-book {
+    color: #ffffff;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.32rem;
+    padding-right: 1.11rem; /* stylelint-disable-line */
+    margin-left: 1px;
+}
+
+#profile div.select input {
+    height: 2.29rem !important;
+    line-height: inherit !important;
+}
+
+#profile div.select ul li span,
+#profile div.select option {
+    font-size: 0.8rem !important;
+    text-align: center !important;
+}
+
+/* /.profile.php */
