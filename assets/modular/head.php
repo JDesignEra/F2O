@@ -2,10 +2,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    
+
     <title>F2O
         <?php
-            if ((isset($title)) || !empty($title) || $title != null) {
+            if (isset($title) && !empty($title) && $title != null) {
                 echo ' | ' . $title;
             }
             else {
@@ -13,29 +13,26 @@
             }
         ?>
     </title>
-    
+
     <!-- Font Awesome -->
-    <link href="assets/MDB Pro/css/font-awesome.min.css" rel="stylesheet" >
-    
+    <link href="assets/MDB Pro/css/font-awesome.min.css" rel="stylesheet" />
+
     <!-- Bootstrap core CSS -->
-    <link href="assets/MDB Pro/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link href="assets/MDB Pro/css/bootstrap.min.css" rel="stylesheet" />
+
     <!-- Material Design Bootstrap -->
-    <link href="assets/MDB Pro/css/mdb.min.css" rel="stylesheet">
-    
+    <link href="assets/MDB Pro/css/mdb.min.css" rel="stylesheet" />
+
     <!-- Pace,js -->
-    <link href="assets/css/pace.css" rel="stylesheet">
-    
-    <?php
-        if($_SERVER['REQUEST_URI'] == "/index.php" || $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] == "localhost/") {
-            echo '<link href="assets/css/home-style.css" rel="stylesheet">';
-        }
-    
-        else {
-            echo '<link href="assets/css/style.css" rel="stylesheet">';
-        }
-    ?>
-    
+    <link href="assets/css/pace.css" rel="stylesheet" />
+
+    <!-- Style -->
+    <?php if ($_SERVER['REQUEST_URI'] == "/index.php" || $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] == "localhost/"): ?>
+        <link href="assets/css/home-style.css" rel="stylesheet" />
+    <?php else: ?>
+        <link href="assets/css/style.css" rel="stylesheet" />
+    <?php endif; ?>
+
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">

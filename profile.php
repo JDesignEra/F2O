@@ -1,10 +1,8 @@
-<!-- TODO Add class="form-control to all <input> -->
-
 <!DOCTYPE html>
 <html lang="en">
     <!-- Head, Navigation & Intro Section -->
     <?php
-        $title = "Profile [1]";
+        //$title = "Profile [1]";
         include('assets/modular/head.php');
     ?>
     <header>
@@ -12,7 +10,7 @@
             include('assets/modular/nav.php');
         ?>
     </header>
-    
+
     <body id="profile">
         <main>
             <div class="container-fluid">
@@ -45,40 +43,41 @@
 
                                 <!-- Content -->
                                 <div class="card-block">
-                                    <!-- Form -->
-                                    <div id="cp-basic-form" style="display: none;">
-                                        <div id="form-name" class="md-form">
-                                            <input id="e-name" type="text" length="20" placeholder="Joel">
-                                            <label for="e-name">Name</label>
-                                        </div>
-                                        <div id="form-title" class="md-form">
-                                            <input id="e-title" type="text" length="20" placeholder="Full-Stack Developer">
-                                            <label for="e-title">Job Title</label>
-                                        </div>
-                                        <hr>
-                                        <div id="form-title" class="md-form">
-                                            <textarea id="e-title" class="md-textarea" type="text" length="120" placeholder="I am a Freelance Full-Stack Developer and Designer with my branding, J.Design. I have been in this industry since 2012. Furthermore, I am skilled in various programming languages and design skills"></textarea>
-                                            <label for="e-title">Summary</label>
-                                        </div>
-                                        <button class="btn teal">
-                                            Save <i class="fa fa-check ml-1"></i>
-                                        </button>
-                                        <button id="cp-basic-form-cancel" class="btn btn-danger">
-                                            Cancel <i class="fa fa-ban ml-1"></i>
-                                        </button>
-                                    </div>
-                                    <!-- /.Form -->
-                                    
                                     <!-- Default -->
                                     <div id="cp-basic-def">
-                                        <h4 id="name">Joel</h4>
-                                        <h5 id="title">Full-Stack Developer</h5>
+                                        <h4 id="p-name">
+                                        </h4>
+                                        <h5 id="p-title"></h5>
                                         <hr>
-                                        <p id="bio">
-                                            I am a Freelance Full-Stack Developer and Designer with my branding, J.Design. I have been in this industry since 2012. Furthermore, I am skilled in various programming languages and design skills.
-                                        </p>
+                                        <p id="p-bio"></p>
                                     </div>
                                     <!-- /.Default -->
+
+                                    <!-- Form -->
+                                    <div id="cp-basic-form" style="display: none;">
+                                        <form id="e-basic-form" method="post">
+                                            <div id="form-name" class="md-form">
+                                                <input id="e-name" name="e-name" type="text" maxlength="50" length="50" placeholder="">
+                                                <label for="e-name">Name</label>
+                                            </div>
+                                            <div id="form-title" class="md-form">
+                                                <input id="e-title" name="e-title" type="text" maxlength="50" length="50" placeholder="">
+                                                <label for="e-title">Job Title</label>
+                                            </div>
+                                            <hr>
+                                            <div id="form-title" class="md-form">
+                                                <textarea id="e-bio" name="e-bio" class="md-textarea" type="text" maxlength="255" length="255" placeholder=""></textarea>
+                                                <label for="e-bio">Summary</label>
+                                            </div>
+                                            <button class="btn teal" type="submit">
+                                                Save <i class="fa fa-check ml-1"></i>
+                                            </button>
+                                            <button id="cp-basic-form-cancel" class="btn btn-danger" type="reset">
+                                                Cancel <i class="fa fa-ban ml-1"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <!-- /.Form -->
                                 </div>
                             </div>
                             <!-- /.Card -->
@@ -86,107 +85,111 @@
                     </div>
                 </section>
                 <!-- /.Basic-Detail Section -->
-                
+
                 <!-- Misc Section -->
                 <section id="misc" class="section">
                     <div class="row justify-content-center">
-                        <!-- Message Card -->
-                        <div class="col-xl-5 col-lg-6">
-                            <section id="message" class="section wow fadeInLeft">
-                                <div id="cp-msg" class="card hoverable">
-                                    <!-- Card Data -->
-                                    <div class="card-up">
-                                        <i class="fa fa-envelope z-depth-1 white-text blue darken-2"></i>
-                                        <div class="data">
-                                            <p>Unread Message</p>
-                                            <h3>1</h3>
-                                        </div>
-                                    </div>
-                                    <!-- /.Card Data -->
-
-                                    <!-- Card Content-->
-                                    <div class="card-block text-center">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-success wow slideInLeft" data-wow-delay="0.5s" role="progressbar" style="width: 5%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="col-11">
+                            <div class="row justify-content-center">
+                                <!-- Message Card -->
+                                <div class="col-6">
+                                    <section id="message" class="section wow fadeInLeft">
+                                        <div id="cp-msg" class="card hoverable">
+                                            <!-- Card Data -->
+                                            <div class="card-up">
+                                                <i class="fa fa-envelope z-depth-1 white-text blue darken-2"></i>
+                                                <div class="data">
+                                                    <p>Unread Message</p>
+                                                    <h3>1</h3>
                                                 </div>
-                                                <h4>1 / 100</h4>
-                                                <p>Message Space</p>
                                             </div>
-                                            <div class="col-6">
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-danger wow slideInLeft" data-wow-delay="0.5s" role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                                <h4>1 / 100</h4>
-                                                <p>Unread Message</p>
-                                            </div>
-                                        </div>
+                                            <!-- /.Card Data -->
 
-                                        <button class="btn btn-cyan">
-                                            Open Inbox&nbsp;<i class="fa fa-envelope-open ml-1"></i>
-                                        </button>
-                                    </div>
-                                    <!-- /.Card Content -->
+                                            <!-- Card Content-->
+                                            <div class="card-block text-center">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <div class="progress">
+                                                            <div class="progress-bar bg-success wow slideInLeft" data-wow-delay="0.5s" role="progressbar" style="width: 5%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                        <h4>1 / 100</h4>
+                                                        <p>Message Space</p>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="progress">
+                                                            <div class="progress-bar bg-danger wow slideInLeft" data-wow-delay="0.5s" role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                        <h4>1 / 100</h4>
+                                                        <p>Unread Message</p>
+                                                    </div>
+                                                </div>
+
+                                                <button class="btn btn-cyan">
+                                                    Open Inbox&nbsp;<i class="fa fa-envelope-open ml-1"></i>
+                                                </button>
+                                            </div>
+                                            <!-- /.Card Content -->
+                                        </div>
+                                    </section>
                                 </div>
-                            </section>
-                        </div>
-                        <!-- /.Message Card -->
-                        
-                        <!-- Job Card -->
-                        <div class="col-xl-5 col-lg-6">
-                            <section id="job" class="section wow fadeInRight">
-                                <div id="cp-job" class="card hoverable">
-                                    <!-- Card Data -->
-                                    <div class="card-up">
-                                        <i class="fa fa-briefcase z-depth-1 white-text blue darken-2"></i>
-                                        <div class="data">
-                                            <p>Uncompleted Job</p>
-                                            <h3>1</h3>
-                                        </div>
-                                    </div>
-                                    <!-- /.Card Data -->
+                                <!-- /.Message Card -->
 
-                                    <!-- Card Content-->
-                                    <div class="card-block text-center">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-success wow slideInLeft" data-wow-delay="0.5s" role="progressbar" style="width: 5%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
+                                <!-- Job Card -->
+                                <div class="col-6">
+                                    <section id="job" class="section wow fadeInRight">
+                                        <div id="cp-job" class="card hoverable">
+                                            <!-- Card Data -->
+                                            <div class="card-up">
+                                                <i class="fa fa-briefcase z-depth-1 white-text blue darken-2"></i>
+                                                <div class="data">
+                                                    <p>Uncompleted Job</p>
+                                                    <h3>1</h3>
                                                 </div>
-                                                <h4>1 / 100</h4>
-                                                <p>Jobs</p>
                                             </div>
-                                            <div class="col-6">
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-danger wow slideInLeft" data-wow-delay="0.5s" role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                                <h4>1 / 100</h4>
-                                                <p>Uncomplete Jobs</p>
-                                            </div>
-                                        </div>
+                                            <!-- /.Card Data -->
 
-                                        <button class="btn btn-cyan">
-                                            Open Job List&nbsp;<i class="fa fa-pencil-square-o ml-1"></i>
-                                        </button>
-                                    </div>
-                                    <!-- /.Card Content -->
+                                            <!-- Card Content-->
+                                            <div class="card-block text-center">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <div class="progress">
+                                                            <div class="progress-bar bg-success wow slideInLeft" data-wow-delay="0.5s" role="progressbar" style="width: 5%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                        <h4>1 / 100</h4>
+                                                        <p>Jobs</p>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="progress">
+                                                            <div class="progress-bar bg-danger wow slideInLeft" data-wow-delay="0.5s" role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                        <h4>1 / 100</h4>
+                                                        <p>Uncomplete Jobs</p>
+                                                    </div>
+                                                </div>
+
+                                                <button class="btn btn-cyan">
+                                                    Open Job List&nbsp;<i class="fa fa-pencil-square-o ml-1"></i>
+                                                </button>
+                                            </div>
+                                            <!-- /.Card Content -->
+                                        </div>
+                                    </section>
                                 </div>
-                            </section>
+                                <!-- /.Job Card -->
+                            </div>
                         </div>
-                        <!-- /.Job Card -->
                     </div>
                 </section>
                 <!-- /.Misc Section -->
-                
+
                 <!-- General Section -->
                 <section id="general" class="section">
                     <div class="row justify-content-center">
-                        <div class="col-xl-3">
+                        <div class="col-xl-5">
                         <!-- Social Section -->
                             <section id="social" class="section wow fadeInLeft">
-                                <div class="card hoverable">
-                                    <a id="social-add" class="btn-floating btn-action secondary-color wow fadeInRight" data-toggle="tooltip" data-placement="right" title="Add">
+                                <div id="cp-social" class="card hoverable">
+                                    <a id="social-add" class="btn-floating btn-action secondary-color" data-toggle="tooltip" data-placement="right" title="Add">
                                         <i class="fa fa-plus" style="margin-top: 7px;"></i>
                                     </a>
 
@@ -195,64 +198,61 @@
                                             <i class="fa fa-share-alt mr-2"></i> Social Links
                                         </h4>
 
-                                        <hr class="my-1">
-                                        <div id="social-detail" class="row">
-                                            <div class="col-1">
-                                                <i class="fa fa-envelope"></i>
-                                            </div>
-                                            <div class="col-9">
-                                                <a href="mailto:joel@jdesignera.com">
-                                                    joel@jdesignera.com
-                                                </a>
-                                            </div>
-                                            <div class="col-1">
-                                                <a id="social-detail-edit" style="display:none;" data-toggle="tooltip" data-placement="right" title="Edit">
-                                                    <i class="fa fa-pencil"></i>
-                                                </a>
-                                            </div>
+                                        <!-- Social Contents -->
+                                        <div id="social-content">
                                         </div>
+                                        <!-- /.Social Contents -->
 
-                                        <hr class="my-1">
-                                        <div id="social-detail" class="row">
-                                            <div class="col-1">
-                                                <i class="fa fa-facebook-official"></i>
-                                            </div>
-                                            <div class="col-9">
-                                                <a href="https://facebook.com">
-                                                    Facebook
-                                                </a>
-                                            </div>
-                                            <div class="col-1">
-                                                <a id="social-detail-edit" style="display:none;" data-toggle="tooltip" data-placement="right" title="Edit">
-                                                    <i class="fa fa-pencil"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        
+                                        <!-- Add Social Form -->
                                         <hr id="hr-social-add-detail" class="my-1" style="display: none;">
-                                        <div id="social-add-detail" class="row justify-content-center" style="display: none;">
-                                            <div class="col-5">
-                                                <select class="select">
-                                                    <option selected disabled>Social</option>
-                                                    <option value="facebook">Facebook</option>
-                                                    <option value="instagram">Instagram</option>
-                                                    <option value="twitter">Twitter</option>
-                                                    <option value="skype">Skype</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-7">
-                                                <div class="md-form">
-                                                    <input id="social-name" type="text">
-                                                    <label for="social-name">Link / Username</label>
+                                        <form id="a-social-form" method="post">
+                                            <div id="social-add-detail" class="row justify-content-center" style="display: none;">
+                                                <div class="col-4">
+                                                    <select id="a-social-type" name="social-type" class="select">
+                                                        <option selected disabled>Select</option>
+                                                        <option value="Behance">Behance</option>
+                                                        <option value="BitBucket">BitBucket</option>
+                                                        <option value="DeviantArt">DeviantArt</option>
+                                                        <option value="Dribbble">Dribbble</option>
+                                                        <option value="Email">Email</option>
+                                                        <option value="Etsy">Etsy</option>
+                                                        <option value="Facebook">Facebook</option>
+                                                        <option value="Flickr">Flickr</option>
+                                                        <option value="GitHub">GitHub</option>
+                                                        <option value="Google+">Google+</option>
+                                                        <option value="Instagram">Instagram</option>
+                                                        <option value="Linkedin">Linkedin</option>
+                                                        <option value="Pinterest">Pinterest</option>
+                                                        <option value="Skype">Skype</option>
+                                                        <option value="Snapchat">Snapchat</option>
+                                                        <option value="SoundCloud">SoundCloud</option>
+                                                        <option value="Telegram">Telegram</option>
+                                                        <option value="Tumblr">Tumblr</option>
+                                                        <option value="Twitter">Twitter</option>
+                                                        <option value="Website">Website</option>
+                                                        <option value="WhatsApp">WhatsApp</option>
+                                                        <option value="YouTube">YouTube</option>
+                                                    </select>
                                                 </div>
+                                                <div class="col-8">
+                                                    <div class="md-form input-group">
+                                                        <span id="a-social-link-front" class="input-group-addon" style="display: none;"></span>
+
+                                                        <input id="a-social-link" name="social-link" type="text" class="form-control" placeholder="Link ID / Username / Phone No.">
+
+                                                        <span id="a-social-link-back" class="input-group-addon" style="display: none;"></span>
+                                                    </div>
+                                                </div>
+
+                                                <button id="sad-save" class="btn btn-md teal">
+                                                    Save <i class="fa fa-check ml-1"></i>
+                                                </button>
+                                                <button id="sad-cancel" class="btn btn-md btn-danger" type="reset">
+                                                    Cancel <i class="fa fa-ban ml-1"></i>
+                                                </button>
                                             </div>
-                                            <button id="sad-save" class="btn btn-md teal">
-                                                Save <i class="fa fa-check ml-1"></i>
-                                            </button>
-                                            <button id="sad-cancel" class="btn btn-md btn-danger">
-                                                Cancel <i class="fa fa-ban ml-1"></i>
-                                            </button>
-                                        </div>
+                                        </form>
+                                        <!-- /.Add Social Form -->
                                     </div>
                                 </div>
                             </section>
@@ -291,11 +291,11 @@
                             <!-- /.Skills Section -->
                         </div>
 
-                        <div class="col-xl-7">
+                        <div class="col-xl-6">
                             <!-- Experince Section -->
                             <section id="experience" class="section wow fadeInRight">
                                 <div class="card hoverable">
-                                    <a id="exp-add" class="btn-floating btn-action secondary-color wow fadeInRight" data-toggle="tooltip" data-placement="right" title="Add">
+                                    <a id="exp-add" class="btn-floating btn-action secondary-color" data-toggle="tooltip" data-placement="right" title="Add">
                                         <i class="fa fa-plus" style="margin-top: 7px;"></i>
                                     </a>
 
@@ -304,42 +304,42 @@
                                             <i class="fa fa-briefcase mr-2"></i> Experience
                                         </h4>
 
-                                        <hr class="my-1">
+                                        <div id="exp-content">
+                                            <hr class="my-1">
+                                            <div id="exp-detail" class="row align-items-center">
+                                                <div class="col-sm-2 col-5 text-center">
+                                                    <i class="fa fa-building fa-3x z-depth-1 blue darken-1 hoverable"></i>
+                                                </div>
 
-                                        <div id="exp-detail" class="row align-items-center">
-                                            <div class="col-sm-2 col-5 text-center">
-                                                <i class="fa fa-building fa-3x z-depth-1 blue darken-1 hoverable"></i>
+                                                <div class="col-sm-9 col-5">
+                                                    <h5>J.Design</h5>
+                                                    <span>Full-Stack Developer</span><br/>
+                                                    <small>2012 - Present</small>
+                                                </div>
+
+                                                <div class="col-sm-1 col-1 text-center">
+                                                    <a id="exp-detail-edit" class="fa fa-pencil fa-lg" style="display: none;" data-toggle="tooltip" data-placement="right" title="Edit"></a>
+                                                </div>
                                             </div>
 
-                                            <div class="col-sm-9 col-5">
-                                                <h5>J.Design</h5>
-                                                <span>Full-Stack Developer</span><br/>
-                                                <small>2012 - Present</small>
-                                            </div>
+                                            <hr class="my-1">
+                                            <div id="exp-detail" class="row align-items-center">
+                                                <div class="col-sm-2 col-5 text-center">
+                                                    <i class="fa fa-building fa-3x z-depth-1 blue darken-1 hoverable"></i>
+                                                </div>
 
-                                            <div class="col-sm-1 col-1 text-center">
-                                                <a id="exp-detail-edit" class="fa fa-pencil fa-lg" style="display: none;" data-toggle="tooltip" data-placement="right" title="Edit"></a>
+                                                <div class="col-sm-9 col-5">
+                                                    <h5>IBM</h5>
+                                                    <span>Lead Developer</span><br/>
+                                                    <small>2010 - 2012</small>
+                                                </div>
+
+                                                <div class="col-sm-1 col-1 text-center">
+                                                    <a id="exp-detail-edit" class="fa fa-pencil fa-lg" style="display: none;" data-toggle="tooltip" data-placement="right" title="Edit"></a>
+                                                </div>
                                             </div>
                                         </div>
 
-                                        <hr class="my-1">
-
-                                        <div id="exp-detail" class="row align-items-center">
-                                            <div class="col-sm-2 col-5 text-center">
-                                                <i class="fa fa-building fa-3x z-depth-1 blue darken-1 hoverable"></i>
-                                            </div>
-
-                                            <div class="col-sm-9 col-5">
-                                                <h5>IBM</h5>
-                                                <span>Lead Developer</span><br/>
-                                                <small>2010 - 2012</small>
-                                            </div>
-
-                                            <div class="col-sm-1 col-1 text-center">
-                                                <a id="exp-detail-edit" class="fa fa-pencil fa-lg" style="display: none;" data-toggle="tooltip" data-placement="right" title="Edit"></a>
-                                            </div>
-                                        </div>
-                                        
                                         <!-- Exp Add Form -->
                                         <hr id="hr-exp-add-detail" class="my-1" style="display: none;">
                                         <div id="exp-add-detail" class="row align-items-center" style="display: none;">
@@ -356,7 +356,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="row justify-content-center">
                                                     <div class="col-12">
                                                         <div class="md-form">
@@ -365,7 +365,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="row justify-content-center">
                                                     <div class="col-6">
                                                         <div class="md-form">
@@ -380,7 +380,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="row justify-content-center text-center">
                                                     <div class="col-12">
                                                         <button id="exp-save" class="btn teal">
@@ -402,7 +402,7 @@
                             <!-- Education Section -->
                             <section id="education" class="section wow fadeInRight">
                                 <div class="card hoverable">
-                                    <a id="edu-add" class="btn-floating btn-action secondary-color wow slideInRight" data-toggle="tooltip" data-placement="right" title="Add">
+                                    <a id="edu-add" class="btn-floating btn-action secondary-color" data-toggle="tooltip" data-placement="right" title="Add">
                                         <i class="fa fa-plus" style="margin-top: 7px;"></i>
                                     </a>
 
@@ -448,7 +448,7 @@
                                                 <a id="edu-detail-edit" style="display: none;" class="fa fa-pencil fa-lg" data-toggle="tooltip" data-placement="right" title="Edit"></a>
                                             </div>
                                         </div>
-                                        
+
                                         <!-- Edu Add Form -->
                                         <hr id="hr-edu-add-detail" class="my-1" style="display: none;">
                                         <div id="edu-add-detail" class="row align-items-center" style="display: none;">
@@ -465,7 +465,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="row justify-content-center">
                                                     <div class="col-6">
                                                         <div class="md-form">
@@ -480,7 +480,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="row justify-content-center">
                                                     <div class="col-6">
                                                         <div class="md-form">
@@ -495,7 +495,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="row justify-content-center text-center">
                                                     <div class="col-12">
                                                         <button id="edu-save" class="btn teal">
@@ -517,14 +517,14 @@
                     </div>
                 </section>
                 <!-- /.General Section -->
-                
-                
+
+
             </div>
         </main>
-        
+
         <?php
             include('assets/modular/footer.php');
-            include('assets/modular/scripts.html');
+            include('assets/modular/scripts.php');
         ?>
     </body>
 </html>

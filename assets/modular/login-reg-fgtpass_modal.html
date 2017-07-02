@@ -71,7 +71,7 @@
 
                             <div class="md-form form-sm">
                                 <i class="fa fa-user prefix"></i>
-                                <input id="r-name" name="r-name" type="text" class="form-control">
+                                <input id="r-name" name="r-name" type="text" maxlength="50" length="50" class="form-control">
                                 <label for="r-name">Name</label>
                             </div>
 
@@ -110,12 +110,16 @@
                     <!-- Body -->
                     <!-- fgtpass-step-1 -->
                     <div id="fgtpass-step-1">
-                        <form id="f-email-form" type="post">
+                        <form id="f-email-form" method="post">
                             <div class="modal-body">
                                 <div class="md-form form-sm">
                                     <i class="fa fa-envelope prefix"></i>
-                                    <input id="f-email" name="f-email" type="text" class="form-control">
+                                    <input id="f-email" name="f-email" type="text" maxlength="255" class="form-control">
                                     <label for="f-email" required>Email</label>
+                                </div>
+
+                                <div id="f-pass-step-1-loader" class="progress primary-color" style="display: none;">
+                                    <div class="indeterminate"></div>
                                 </div>
 
                                 <div class="text-center form-sm mt-2">
@@ -128,18 +132,22 @@
 
                     <!-- fgtpass-step-2 -->
                     <div id="fgtpass-step-2">
-                        <form id="f-code-form" type="post">
+                        <form id="f-code-form" method="post">
                             <div class="modal-body">
                                 <div class="md-form form-sm">
                                     <i class="fa fa-unlock-alt prefix"></i>
-                                    <input id="f-code" name="f-code" type="number" class="form-control">
-                                    <label for="f-code" required>Verification Code</label>
+                                    <input id="f-code" name="f-code" type="password" length="4" class="form-control">
+                                    <label for="f-code">Verification Code</label>
+                                </div>
+
+                                <div id="f-pass-step-2-loader" class="progress primary-color" style="display: none;">
+                                    <div class="indeterminate"></div>
                                 </div>
 
                                 <div class="text-center form-sm mt-2">
                                     <div class="row">
                                         <div class="col-lg-4 offset-lg-4">
-                                            <button id="f-code-btn" value="f-code-form" class="btn teal">Verify <i class="fa fa-angle-double-right ml-1"></i></button>
+                                            <button id="f-code-btn" type="submit" class="btn teal">Verify <i class="fa fa-angle-double-right ml-1"></i></button>
                                         </div>
 
                                         <div class="col-lg-4">
@@ -154,11 +162,11 @@
 
                     <!-- fgtpass-step-3 -->
                     <div id="fgtpass-step-3">
-                        <form id="f-pass-form" type="post">
+                        <form id="f-pass-form" method="post">
                             <div class="modal-body">
                                 <div class="md-form form-sm">
                                     <i class="fa fa-key prefix"></i>
-                                    <input id="f-pass" name="f-pass" type="password" class="form-control">
+                                    <input id="f-pass" name="f-pass" type="password" length="32" class="form-control">
                                     <label for="f-pass" required>New Password</label>
                                 </div>
 

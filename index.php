@@ -7,7 +7,7 @@
     <?php
         include('assets/modular/head.php');
     ?>
-    
+
     <body>
         <!-- Navigation & Intro -->
         <header>
@@ -24,7 +24,7 @@
                                 <img class="intro-logo mx-auto wow fadeInDown" src="assets/img/F2O-Colored-400x330.png" width="300px">
                             </div>
                         </div>
-                        
+
                         <!-- Second Row -->
                         <div id="home-intro" class="row">
                             <!-- First Col -->
@@ -85,7 +85,7 @@
                                                 <div class="text-center">
                                                     <button class="btn teal">Register</button>
                                                 </div>
-                                                
+
                                                 <div class="text-center red-text">
                                                     *<small>Organisation do not require an account to hire freelancers.</small>
                                                 </div>
@@ -100,9 +100,9 @@
                                             <div class="content">
                                                 <h4><i class="fa fa-sign-in"></i> Login</h4>
                                                 <a><i class="fa fa-close rotate-btn" data-card="intro-card"></i></a>
-                                                
+
                                                 <hr class="hr-pad">
-                                                
+
                                                 <div class="md-form">
                                                     <i class="fa fa-envelope prefix"></i>
                                                     <input type="email" id="l-email" class="form-control">
@@ -134,18 +134,18 @@
             <!-- /.Intro Mask -->
         </header>
         <!-- /.Navigation & Intro -->
-        
+
         <!-- Main -->
         <main>
             <section id="new-freelancer" class="section">
                 <h1 class="section-heading wow fadeIn">Newest F2O Members</h1>
             </section>
         </main>
-        
+
         <!-- Footer & Scripts -->
         <?php
             include('assets/modular/footer.php');
-            include('assets/modular/scripts.html');
+            include('assets/modular/scripts.php');
         ?>
     </body>
 </html>

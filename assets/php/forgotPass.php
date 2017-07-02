@@ -1,5 +1,6 @@
 <?php
     require('db.php');
+    require('generatePin.php');
 
     if (!isset($_SESSION)) {
         session_start();
@@ -13,12 +14,14 @@
         $code = trim($_POST['f-code']);
         $code = stripslashes($code);
         $code = mysqli_real_escape_string($dbconn, $code);
+        //echo $code;
     }
 
     if (isset($_POST['f-pass'])) {
         $pass = trim($_POST['f-pass']);
         $pass = stripslashes($pass);
         $pass = mysqli_real_escape_string($dbconn, $pass);
+        //echo $pass;
     }
 
     $sql = "SELECT * FROM accounts WHERE email = '$email'";
@@ -27,82 +30,72 @@
 
     $count = mysqli_num_rows($result);
 
-    if (isset($_POST['f-pass']) && isset($_POST['f-code']) && isset($_POST['f-email'])) {
-        if ($email == '') {
-            echo json_encode('email-empty');
+    if (isset($_POST['f-email']) && isset($_POST['f-code']) && isset($_POST['f-pass'])) {
+        if ($pass == '') {
+            echo json_econde('pass-empty');
         }
-        elseif (!(filter_var($email, FILTER_VALIDATE_EMAIL) && preg_match('/@.+\./', $email))) {
-            echo json_encode('email-fail');
+        elseif (strlen($pass) < 8) {
+            echo json_encode('pass-min');
         }
-        elseif ($code == '') {
+        elseif (strlen($pass) > 32) {
+            echo json_encode('pass-max');
+        }
+        elseif ($count > 0 && $ret['code'] == $code) {
+            //Remove Code after use
+            $sql = "UPDATE accounts SET code='' WHERE email='$email'";
+            mysqli_query($dbconn, $sql);
+
+            //Store pass
+            $pass = password_hash($pass, PASSWORD_BCRYPT);
+            $sql = "UPDATE accounts SET password='$pass' WHERE email='$email'";
+            mysqli_query($dbconn, $sql);
+
+            echo json_encode('pass-pass');
+        }
+    }
+    elseif (isset($_POST['f-email']) && isset($_POST['f-code'])) {
+        if ($code == '') {
             echo json_encode('code-empty');
         }
         elseif (strlen($code) != 4) {
             echo json_encode('code-min-max');
         }
-        elseif ($count > 0) {
-            if ($code == $ret['code'] && $email == $ret['email']) {
-                if ($pass == '') {
-                    echo json_encode('pass-empty');
-                }
-                elseif (strlen($pass) < 8) {
-                    echo json_encode('pass-min');
-                }
-                elseif (strlen($pass) > 32) {
-                    echo json_encode('pass-max');
-                }
-                else {
-                    echo json_encode('pass-pass');
-                }
-            }
-            else {
-                echo json_encode('code-fail');
-            }
+        elseif ($count > 0 && $ret['code'] == $code) {
+            echo json_encode('code-pass');
         }
         else {
-            echo json_encode('code-fatal');
-        }
-    }
-    elseif (isset($_POST['f-code']) && isset($_POST['f-email'])) {
-        if ($email == '') {
-            echo json_encode('email-empty');
-        }
-        elseif (!(filter_var($email, FILTER_VALIDATE_EMAIL) && preg_match('/@.+\./', $email))) {
-            echo json_encode('email-fail');
-        }
-        elseif ($code == '') {
-            echo json_encode('code-empty');
-        }
-        elseif (strlen($code) != 4) {
-            echo json_encode('code-min-max');
-        }
-        elseif ($count > 0) {
-            if ($code == $ret['code'] && $email == $ret['email']) {
-                echo json_encode('code-pass');
-            }
-            else {
-                echo json_encode('code-fail');
-            }
-        }
-        else {
-            echo json_encode('code-fatal');
-        }
-    }
-    elseif (isset($_POST['f-email'])) {
-        if ($email == '') {
-            echo json_encode('email-empty');
-        }
-        elseif (!(filter_var($email, FILTER_VALIDATE_EMAIL) && preg_match('/@.+\./', $email))) {
-            echo json_encode('email-fail');
-        }
-        elseif ($count > 0) {
-            echo json_encode('email-pass');
-        }
-        else {
-            echo json_encode('email-none');
+            echo json_econde('code-fail');
         }
     }
     else {
-        echo json_encode('p-fatal');
+        if ($email == '') {
+            echo json_encode('email-empty');
+        }
+        elseif (!(filter_var($email, FILTER_VALIDATE_EMAIL) && preg_match('/@.+\./', $email))) {
+            echo json_encode('email-error');
+        }
+        elseif ($count > 0) {
+            //Generate 4 digit pin
+            $pin = generatePin();
+
+            // Send 4 digit email code
+            $header = 'From: F2O <jdesignera.test+f2o@gmail.com>' .
+            "\r\n" .
+            'Reply-To: jdesignera.test+f2o@gmail.com';
+
+            mail($email, '[F2O] Verification Code For Password Reset', $pin, $header);
+
+            //Store
+            $sql = "UPDATE accounts SET code='$pin' WHERE email='$email'";
+            $result = mysqli_query($dbconn, $sql);
+
+            echo json_encode('email-pass');
+        }
+        else {
+            echo json_encode('email-fail');
+        }
     }
+
+    mysqli_close($dbconn);
+    exit();
 ?>

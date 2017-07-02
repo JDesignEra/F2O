@@ -16,4 +16,9 @@
 
 <!-- Custom Scripts -->
 <script src="assets/js/script.js" type="text/javascript"></script>
-<script src="assets/js/form-script.js" type="text/javascript"></script>
+<script src="assets/js/LRF-Form.js" type="text/javascript"></script>
+
+<?php if ($_SERVER['REQUEST_URI'] == "/profile.php"): ?>
+    <script src="assets/js/getProfile.js" type="text/javascript"></script>
+    <script src="assets/js/editProfile-Form.js" type="text/javascript"></script>
+<?php endif; ?>

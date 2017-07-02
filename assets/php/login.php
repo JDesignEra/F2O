@@ -39,10 +39,10 @@
 
         if (password_verify($pass, $ret['password'])) {
             $_SESSION['uid'] = $ret['uid'];
-            $_SESSION['email'] = $ret['email'];
-            $_SESSION['pass'] = $ret['password'];
-            $_SESSION['name'] = $ret['name'];
-            $_SESSION['bio'] = $ret['bio'];
+            //$_SESSION['email'] = $ret['email'];
+            //$_SESSION['pass'] = $ret['password'];
+            //$_SESSION['name'] = $ret['name'];
+            //$_SESSION['bio'] = $ret['bio'];
 
             echo json_encode('pass');
         }

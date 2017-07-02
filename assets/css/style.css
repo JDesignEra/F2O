@@ -401,7 +401,7 @@ footer.page-footer h6 {
     text-transform: uppercase;
 }
 
-#profile #misc .col-xl-5.col-lg-6 {
+#profile #misc .col-6 {
     margin-top: 2rem;
 }
 
@@ -410,7 +410,7 @@ footer.page-footer h6 {
         margin-bottom: 0;
     }
 
-    #profile #misc .col-xl-5.col-lg-6 {
+    #profile #misc .col-6 {
         margin-top: 4rem;
     }
 }
@@ -426,7 +426,21 @@ footer.page-footer h6 {
     color: #757575;
 }
 
-/* Exxperience Section */
+#profile #social.section form#a-social-form .select-wrapper span.caret {
+    top: 1.15rem;
+}
+
+#profile #social.section form#a-social-form input#a-social-link,
+#profile #social.section form#a-social-form span#a-social-link-back,
+#profile #social.section form#a-social-form span#a-social-link-front {
+    font-size: 0.85rem;
+}
+
+#profile #social.section form#a-social-form input.select-dropdown {
+    font-size: 0.9rem;
+}
+
+/* Experience Section */
 #profile #experience #exp-detail h5 {
     font-size: 1.1rem;
     font-weight: 500 !important;
@@ -447,7 +461,7 @@ footer.page-footer h6 {
     margin-left: 1px;
 }
 
-/* Exxperience Section */
+/* Experience Section */
 #profile #education #edu-detail h5 {
     font-size: 1.1rem;
     font-weight: 500 !important;
@@ -469,13 +483,13 @@ footer.page-footer h6 {
 }
 
 #profile div.select input {
-    height: 2.29rem !important;
-    line-height: inherit !important;
+    height: 3.24rem !important;
+    line-height: 1.5 !important;
 }
 
 #profile div.select ul li span,
 #profile div.select option {
-    font-size: 0.8rem !important;
+    font-size: 0.9rem !important;
     text-align: center !important;
 }
 
