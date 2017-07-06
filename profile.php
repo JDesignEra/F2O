@@ -209,29 +209,7 @@
                                             <div id="social-add-detail" class="row justify-content-center" style="display: none;">
                                                 <div class="col-4">
                                                     <select id="a-social-type" name="social-type" class="select">
-                                                        <option selected disabled>Select</option>
-                                                        <option value="Behance">Behance</option>
-                                                        <option value="BitBucket">BitBucket</option>
-                                                        <option value="DeviantArt">DeviantArt</option>
-                                                        <option value="Dribbble">Dribbble</option>
-                                                        <option value="Email">Email</option>
-                                                        <option value="Etsy">Etsy</option>
-                                                        <option value="Facebook">Facebook</option>
-                                                        <option value="Flickr">Flickr</option>
-                                                        <option value="GitHub">GitHub</option>
-                                                        <option value="Google+">Google+</option>
-                                                        <option value="Instagram">Instagram</option>
-                                                        <option value="Linkedin">Linkedin</option>
-                                                        <option value="Pinterest">Pinterest</option>
-                                                        <option value="Skype">Skype</option>
-                                                        <option value="Snapchat">Snapchat</option>
-                                                        <option value="SoundCloud">SoundCloud</option>
-                                                        <option value="Telegram">Telegram</option>
-                                                        <option value="Tumblr">Tumblr</option>
-                                                        <option value="Twitter">Twitter</option>
-                                                        <option value="Website">Website</option>
-                                                        <option value="WhatsApp">WhatsApp</option>
-                                                        <option value="YouTube">YouTube</option>
+                                                        <option selected disabled>Select Platform</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-8">
@@ -292,7 +270,7 @@
                         </div>
 
                         <div class="col-xl-6">
-                            <!-- Experince Section -->
+                            <!-- Experience Section -->
                             <section id="experience" class="section wow fadeInRight">
                                 <div class="card hoverable">
                                     <a id="exp-add" class="btn-floating btn-action secondary-color" data-toggle="tooltip" data-placement="right" title="Add">
@@ -342,62 +320,64 @@
 
                                         <!-- Exp Add Form -->
                                         <hr id="hr-exp-add-detail" class="my-1" style="display: none;">
-                                        <div id="exp-add-detail" class="row align-items-center" style="display: none;">
-                                            <div class="col-sm-2 col-5 text-center">
-                                                <i class="fa fa-building fa-3x z-depth-1 blue darken-1 hoverable"></i>
+                                        <form id="add-exp-form" method="post">
+                                            <div id="exp-add-detail" class="row align-items-center" style="display: none;">
+                                                <div class="col-sm-2 col-5 text-center">
+                                                    <i class="fa fa-building fa-3x z-depth-1 blue darken-1 hoverable"></i>
+                                                </div>
+
+                                                <div class="col-sm-10 col-6">
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-12">
+                                                            <div class="md-form">
+                                                                <input id="exp-company" name="exp-company" class="form-control" type="text">
+                                                                <label for="exp-company">Company</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-12">
+                                                            <div class="md-form">
+                                                                <input id="exp-title" name="exp-title" class="form-control" type="text">
+                                                                <label for="exp-title">Job Title</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-6">
+                                                            <div class="md-form">
+                                                                <input id="exp-start" name="exp-start" type="text" placeholder="Pick Date" class="form-control datepicker">
+                                                                <label for="exp-start">Start Date</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="md-form">
+                                                                <input id="exp-end" name="exp-end" type="text" placeholder="Present" value="Present" type="text" class="form-control datepicker">
+                                                                <label for="exp-end">End Date</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row justify-content-center text-center">
+                                                        <div class="col-12">
+                                                            <button id="exp-save" type="submit" class="btn teal">
+                                                                Save <i class="fa fa-check ml-1"></i>
+                                                            </button>
+                                                            <button id="exp-cancel" class="btn btn-danger" type="reset">
+                                                                Cancel <i class="fa fa-ban ml-1"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-
-                                            <div class="col-sm-10 col-6">
-                                                <div class="row justify-content-center">
-                                                    <div class="col-12">
-                                                        <div class="md-form">
-                                                            <input id="exp-company" type="text">
-                                                            <label for="exp-company">Company</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row justify-content-center">
-                                                    <div class="col-12">
-                                                        <div class="md-form">
-                                                            <input id="exp-title" type="text">
-                                                            <label for="exp-title">Job Title</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row justify-content-center">
-                                                    <div class="col-6">
-                                                        <div class="md-form">
-                                                            <input id="exp-start" type="text" placeholder="Pick Date" class="form-control datepicker">
-                                                            <label for="exp-start">Start Date</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <div class="md-form">
-                                                            <input id="exp-end" placeholder="Present" value="Present" type="text" class="form-control datepicker">
-                                                            <label for="exp-end">End Date</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row justify-content-center text-center">
-                                                    <div class="col-12">
-                                                        <button id="exp-save" class="btn teal">
-                                                            Save <i class="fa fa-check ml-1"></i>
-                                                        </button>
-                                                        <button id="exp-cancel" id="exp-cancel" class="btn btn-danger">
-                                                            Cancel <i class="fa fa-ban ml-1"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </form>
                                         <!-- /.Exp Add Form -->
                                     </div>
                                 </div>
                             </section>
-                            <!-- Experince Section -->
+                            <!-- Experience Section -->
 
                             <!-- Education Section -->
                             <section id="education" class="section wow fadeInRight">

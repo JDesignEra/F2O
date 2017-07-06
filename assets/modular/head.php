@@ -15,13 +15,13 @@
     </title>
 
     <!-- Font Awesome -->
-    <link href="assets/MDB Pro/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/framework/css/font-awesome.min.css" rel="stylesheet" />
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/MDB Pro/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/framework/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Material Design Bootstrap -->
-    <link href="assets/MDB Pro/css/mdb.min.css" rel="stylesheet" />
+    <link href="assets/framework/css/mdb.min.css" rel="stylesheet" />
 
     <!-- Pace,js -->
     <link href="assets/css/pace.css" rel="stylesheet" />

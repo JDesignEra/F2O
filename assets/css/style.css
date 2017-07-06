@@ -42,7 +42,11 @@ main {
 
 /* toast */
 #toast-container .toast {
-    width: 350px;
+    width: 400px;
+}
+
+#toast-container > div {
+    opacity: 0.9;
 }
 
 /* Special amp */

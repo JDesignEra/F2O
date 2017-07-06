@@ -4,6 +4,8 @@ $(document).ready(function() {
         url: 'assets/php/getProfile.php',
         dataType: 'json',
         success: function(data) {
+            //console.log(data);    // Debugging Purpose
+
             $('#profile #p-name').html(data.name);
             $('#profile form#e-basic-form  #e-name').attr('placeholder', data.name);
 
@@ -13,7 +15,7 @@ $(document).ready(function() {
             $('#profile #p-bio').html(data.bio);
             $('#profile form#e-basic-form  #e-bio').attr('placeholder', data.bio);
 
-            //Populate Profile Social Section
+            // Populate Profile Social Section
             for (var i = 0; i < data.socials.length; i++) {
                 socialContent(data.socials[i].social_id, data.socials[i].social_type, data.socials[i].social_url);
                 $('[data-tooltip="tooltip"]').tooltip();
