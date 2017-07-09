@@ -12,7 +12,7 @@
         if (isset($_SESSION['uid'])) {
             $uid = $_SESSION['uid'];
 
-            //Retrive accounts table info
+            // Retrieve accounts table info
             $sql = "SELECT * FROM accounts WHERE uid='$uid'";
             $result = mysqli_query($dbconn, $sql);
             $count = mysqli_num_rows($result);
@@ -27,11 +27,12 @@
                     'title' => $ret['title'],
                     'bio' => $ret['bio'],
                     'socials' => array(),
+                    'experiences' => array(),
                 );
             }
-            // /.Retrive accounts table
+            // /.Retrieve accounts table
 
-            // Retrive socials table
+            // Retrieve socials table
             $sql = "SELECT * FROM socials WHERE acc_uid='$uid'";
             $result = mysqli_query($dbconn, $sql);
             $count = mysqli_num_rows($result);
@@ -46,6 +47,32 @@
                     );
                 }
             }
+
+            // Retrieve experiences table
+            $sql = "SELECT * FROM experiences WHERE acc_uid='$uid'";
+            $result = mysqli_query($dbconn, $sql);
+            $count = mysqli_num_rows($result);
+
+            if ($count > 0) {
+                while($ret = mysqli_fetch_assoc($result)) {
+                    if (!strcasecmp($ret['end_date'], 'Present') == 0) {
+                        $exp_end = date('Y', strtotime($ret['end_date']));
+                    }
+                    else {
+                        $exp_end = $ret['end_date'];
+                    }
+
+                    array_push($profile['experiences'], array(
+                            'exp_id' => $ret['uid'],
+                            'exp_company' => $ret['company'],
+                            'exp_title' => $ret['title'],
+                            'exp_start' => date('Y', strtotime($ret['start_date'])),
+                            'exp_end' => $exp_end,
+                        )
+                    );
+                }
+            }
+            // /.Retrieve experiences table
 
             echo json_encode($profile);
         }

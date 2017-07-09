@@ -14,6 +14,15 @@ $(document).ready(function() {
         formatSubmit: 'yyyy-mm-dd',
         hiddenName: true,
     });
+
+    //#exp-end_root
+    /*
+    $('#exp-end_root .picker__button--today').click(function() {
+        console.log('passed');
+        var picker = $('#exp-end').pickadate('picker');
+        picker.set('select', 'Present');
+    });
+    */
 });
 
 $(document).ready(function() {
@@ -107,13 +116,15 @@ $(document).ready(function() {
                 else if (data == 'start-fail') {
                     toastr.error('Invalid start date format');
                 }
-                /*
                 else if (data == 'end-fail') {
                     toastr.error('Invalid end date format');
                 }
-                */
                 else if (data == 'pass') {
                     toastr.success('Job experience added successfully');
+
+                    setTimeout(function() {
+                        document.location.reload(true);
+                    }, 500);
                 }
             }
         });
@@ -491,6 +502,27 @@ $(document).ready(function() {
 
     // exp-cancel
     animateGenCol6('button#exp-cancel', 'experience', 'exp', 'shrink');
+
+    // exp-present (Experience Form Present Checkbox)
+    $('#profile #experience.section #exp-add-detail #exp-present').change(function() {
+        if (this.checked) {
+            $('#profile #experience.section #exp-add-detail input[type="hidden"][name="exp-end"]').val('Present');
+            $('#profile #experience.section #exp-add-detail input#exp-end').prop('disabled', true).prop('placeholder', 'Present');
+        }
+        else {
+            $('#profile #experience.section #exp-add-detail input[type="hidden"][name="exp-end"]').val('');
+            $('#profile #experience.section #exp-add-detail input#exp-end').prop('disabled', false).prop('placeholder', 'Pick Date');
+        }
+    });
+
+    // exp-edit (Edit icon annimation fade-in and out)
+    $('#profile #experience.section').mouseenter(function () {
+        $('#profile #experience.section #exp-detail a#exp-detail-edit').fadeIn(250);
+    });
+
+    $('#profile #experience.section').mouseleave(function () {
+        $('#profile #experience.section #exp-detail a#exp-detail-edit').fadeOut(250);
+    });
     // /.Experience Section
 
     // Education Section
@@ -500,15 +532,6 @@ $(document).ready(function() {
     // edu-cancel
     animateGenCol6('button#edu-cancel', 'education', 'edu', 'shrink');
     // /.Education Section
-
-    // exp-edit
-    $('#profile #experience.section').mouseenter(function () {
-        $('#profile #experience.section #exp-detail a#exp-detail-edit').fadeIn(250);
-    });
-
-    $('#profile #experience.section').mouseleave(function () {
-        $('#profile #experience.section #exp-detail a#exp-detail-edit').fadeOut(250);
-    });
 
     // edu-edit
     $('#profile #education.section').mouseenter(function () {
@@ -524,9 +547,9 @@ $(document).ready(function() {
     function animateGenCol6(target, secID, subID, shrinkExpand) {
         //Expand
         if (shrinkExpand === 'expand') {
-            $('#profile #' + secID + '.section ' + target).click(function () {
-                var nowHeight = $('#profile #' + secID + '.section div.card .card-block').outerHeight() - parseFloat($('#profile #' + secID + '.section div.card .card-block').css('padding-top')) - parseFloat($('#profile #' + secID + '.section div.card .card-block').css('padding-bottom')),
-                    newHeight = nowHeight + $('#profile #' + secID + '.section div#' + subID + '-add-detail').outerHeight();
+            $('#profile #' + secID + '.section ' + target).click(function() {
+                var nowHeight = $('#profile #' + secID + '.section div.card .card-block').outerHeight(),
+                    newHeight = nowHeight + $('#profile #' + secID + '.section div#' + subID + '-add-detail').outerHeight() + $('#profile #' + secID + '.section div.card .card-block hr#hr-' + subID + '-add-detail').outerHeight(true);
 
                 $('#hr-' + subID + '-add-detail').fadeIn(1000);
                 $('#profile #' + secID + '.section a#' + subID + '-add').addClass('animated flipOutY').one(animationEnd, function() {
@@ -557,8 +580,8 @@ $(document).ready(function() {
 
         if (shrinkExpand === 'shrink') {
             $('#profile #' + secID + '.section #' + subID + '-add-detail  ' + target).click(function () {
-                var nowHeight = $('#profile #' + secID + '.section div.card .card-block').outerHeight() - parseFloat($('#profile #' + secID + '.section div.card .card-block').css('padding-top')) - parseFloat($('#profile #' + secID + '.section div.card .card-block').css('padding-bottom')),
-                    newHeight = nowHeight - $('#profile #' + secID + '.section div#' + subID + '-add-detail').outerHeight();
+                var nowHeight = $('#profile #' + secID + '.section div.card .card-block').outerHeight(),
+                    newHeight = nowHeight - $('#profile #' + secID + '.section div#' + subID + '-add-detail').outerHeight() - $('#profile #' + secID + '.section div.card .card-block hr#hr-' + subID + '-add-detail').outerHeight(true);
 
                 $('#hr-' + subID + '-add-detail').fadeOut(1000);
                 $('#profile #' + secID + '.section a#' + subID + '-add').addClass('animated flipOutY').one(animationEnd, function() {

@@ -282,80 +282,62 @@
                                             <i class="fa fa-briefcase mr-2"></i> Experience
                                         </h4>
 
+                                        <!-- Experience Contents -->
                                         <div id="exp-content">
-                                            <hr class="my-1">
-                                            <div id="exp-detail" class="row align-items-center">
-                                                <div class="col-sm-2 col-5 text-center">
-                                                    <i class="fa fa-building fa-3x z-depth-1 blue darken-1 hoverable"></i>
-                                                </div>
-
-                                                <div class="col-sm-9 col-5">
-                                                    <h5>J.Design</h5>
-                                                    <span>Full-Stack Developer</span><br/>
-                                                    <small>2012 - Present</small>
-                                                </div>
-
-                                                <div class="col-sm-1 col-1 text-center">
-                                                    <a id="exp-detail-edit" class="fa fa-pencil fa-lg" style="display: none;" data-toggle="tooltip" data-placement="right" title="Edit"></a>
-                                                </div>
-                                            </div>
-
-                                            <hr class="my-1">
-                                            <div id="exp-detail" class="row align-items-center">
-                                                <div class="col-sm-2 col-5 text-center">
-                                                    <i class="fa fa-building fa-3x z-depth-1 blue darken-1 hoverable"></i>
-                                                </div>
-
-                                                <div class="col-sm-9 col-5">
-                                                    <h5>IBM</h5>
-                                                    <span>Lead Developer</span><br/>
-                                                    <small>2010 - 2012</small>
-                                                </div>
-
-                                                <div class="col-sm-1 col-1 text-center">
-                                                    <a id="exp-detail-edit" class="fa fa-pencil fa-lg" style="display: none;" data-toggle="tooltip" data-placement="right" title="Edit"></a>
-                                                </div>
-                                            </div>
                                         </div>
+                                        <!-- /.Experience Contents -->
 
                                         <!-- Exp Add Form -->
                                         <hr id="hr-exp-add-detail" class="my-1" style="display: none;">
                                         <form id="add-exp-form" method="post">
-                                            <div id="exp-add-detail" class="row align-items-center" style="display: none;">
-                                                <div class="col-sm-2 col-5 text-center">
-                                                    <i class="fa fa-building fa-3x z-depth-1 blue darken-1 hoverable"></i>
-                                                </div>
-
-                                                <div class="col-sm-10 col-6">
-                                                    <div class="row justify-content-center">
-                                                        <div class="col-12">
-                                                            <div class="md-form">
-                                                                <input id="exp-company" name="exp-company" class="form-control" type="text">
-                                                                <label for="exp-company">Company</label>
-                                                            </div>
+                                            <div id="exp-add-detail" class="row align-items-center" style="display:none;">
+                                                <div class="col-12 text-center">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-sm-2 col-5 text-center">
+                                                            <i class="fa fa-building fa-3x z-depth-1 blue darken-1 hoverable"></i>
                                                         </div>
-                                                    </div>
 
-                                                    <div class="row justify-content-center">
-                                                        <div class="col-12">
-                                                            <div class="md-form">
-                                                                <input id="exp-title" name="exp-title" class="form-control" type="text">
-                                                                <label for="exp-title">Job Title</label>
+                                                        <div class="col-sm-10 col-6">
+                                                            <div class="row justify-content-center">
+                                                                <div class="col-12">
+                                                                    <div class="md-form">
+                                                                        <input id="exp-company" name="exp-company" class="form-control" type="text">
+                                                                        <label for="exp-company">Company</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </div>
 
-                                                    <div class="row justify-content-center">
-                                                        <div class="col-6">
-                                                            <div class="md-form">
-                                                                <input id="exp-start" name="exp-start" type="text" placeholder="Pick Date" class="form-control datepicker">
-                                                                <label for="exp-start">Start Date</label>
+                                                            <div class="row justify-content-center">
+                                                                <div class="col-12">
+                                                                    <div class="md-form">
+                                                                        <input id="exp-title" name="exp-title" class="form-control" type="text">
+                                                                        <label for="exp-title">Job Title</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="col-6">
-                                                            <div class="md-form">
-                                                                <input id="exp-end" name="exp-end" type="text" placeholder="Present" value="Present" type="text" class="form-control datepicker">
-                                                                <label for="exp-end">End Date</label>
+
+                                                            <div class="row justify-content-center">
+                                                                <div class="col-6">
+                                                                    <div class="md-form">
+                                                                        <input id="exp-start" name="exp-start" type="text" placeholder="Pick Date" class="form-control datepicker">
+                                                                        <label for="exp-start">Start Date</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <div class="md-form">
+                                                                        <input id="exp-end" name="exp-end" type="text" placeholder="Pick Date" type="text" class="form-control datepicker">
+                                                                        <label for="exp-end">End Date</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row text-left align-items-start">
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <input id="exp-present" type="checkbox">
+                                                                        <label for="exp-present">I currently work here</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -431,51 +413,54 @@
 
                                         <!-- Edu Add Form -->
                                         <hr id="hr-edu-add-detail" class="my-1" style="display: none;">
-                                        <div id="edu-add-detail" class="row align-items-center" style="display: none;">
-                                            <div class="col-sm-2 col-5 text-center">
-                                                <i class="fa fa-book fa-3x z-depth-1 blue darken-1 hoverable"></i>
-                                            </div>
+                                        <div id="edu-add-detail" class="row align-items-center" style="display:none;">
+                                            <div class="col-12">
+                                                <div class="row align-items-center">
+                                                    <div class="col-sm-2 col-5 text-center">
+                                                        <i class="fa fa-book fa-3x z-depth-1 blue darken-1 hoverable"></i>
+                                                    </div>
 
-                                            <div class="col-sm-10 col-6">
-                                                <div class="row justify-content-center">
-                                                    <div class="col-12">
-                                                        <div class="md-form">
-                                                            <input id="edu-school" type="text">
-                                                            <label for="edu-school">School</label>
+                                                    <div class="col-sm-10 col-6">
+                                                        <div class="row justify-content-center">
+                                                            <div class="col-12">
+                                                                <div class="md-form">
+                                                                    <input id="edu-school" type="text">
+                                                                    <label for="edu-school">School</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row justify-content-center">
+                                                            <div class="col-6">
+                                                                <div class="md-form">
+                                                                    <input id="edu-degree" type="text">
+                                                                    <label for="edu-degree">Degree</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="md-form">
+                                                                    <input id="exp-field" type="text">
+                                                                    <label for="exp-field">Field Of Study</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row justify-content-center">
+                                                            <div class="col-6">
+                                                                <div class="md-form">
+                                                                    <input id="exp-start" type="text" placeholder="Pick Date" class="form-control datepicker">
+                                                                    <label for="exp-start">Start Date</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="md-form">
+                                                                    <input id="exp-end" placeholder="Present" value="Present" type="text" class="form-control datepicker">
+                                                                    <label for="exp-end">End Date</label>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-
-                                                <div class="row justify-content-center">
-                                                    <div class="col-6">
-                                                        <div class="md-form">
-                                                            <input id="edu-degree" type="text">
-                                                            <label for="edu-degree">Degree</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <div class="md-form">
-                                                            <input id="exp-field" type="text">
-                                                            <label for="exp-field">Field Of Study</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row justify-content-center">
-                                                    <div class="col-6">
-                                                        <div class="md-form">
-                                                            <input id="exp-start" type="text" placeholder="Pick Date" class="form-control datepicker">
-                                                            <label for="exp-start">Start Date</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <div class="md-form">
-                                                            <input id="exp-end" placeholder="Present" value="Present" type="text" class="form-control datepicker">
-                                                            <label for="exp-end">End Date</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
                                                 <div class="row justify-content-center text-center">
                                                     <div class="col-12">
                                                         <button id="edu-save" class="btn teal">

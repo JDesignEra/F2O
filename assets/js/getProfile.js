@@ -7,17 +7,23 @@ $(document).ready(function() {
             //console.log(data);    // Debugging Purpose
 
             $('#profile #p-name').html(data.name);
-            $('#profile form#e-basic-form  #e-name').attr('placeholder', data.name);
+            $('#profile form#e-basic-form  #e-name').prop('placeholder', data.name);
 
             $('#profile #p-title').html(data.title);
-            $('#profile form#e-basic-form  #e-title').attr('placeholder', data.title);
+            $('#profile form#e-basic-form  #e-title').prop('placeholder', data.title);
 
             $('#profile #p-bio').html(data.bio);
-            $('#profile form#e-basic-form  #e-bio').attr('placeholder', data.bio);
+            $('#profile form#e-basic-form  #e-bio').prop('placeholder', data.bio);
 
             // Populate Profile Social Section
             for (var i = 0; i < data.socials.length; i++) {
                 socialContent(data.socials[i].social_id, data.socials[i].social_type, data.socials[i].social_url);
+                $('[data-tooltip="tooltip"]').tooltip();
+            }
+
+            // Populate Profile Experience Section
+            for (var j = 0; j < data.experiences.length; j++) {
+                expContent(data.experiences[j].exp_id, data.experiences[j].exp_company, data.experiences[j].exp_title, data.experiences[j].exp_start, data.experiences[j].exp_end);
                 $('[data-tooltip="tooltip"]').tooltip();
             }
 
@@ -26,7 +32,29 @@ $(document).ready(function() {
     });
 });
 
-//Populate Profile Social Section
+// Populate Profile Experiences Section
+function expContent(exp_id, exp_com, exp_title, exp_start, exp_end) {
+    $('#profile div#exp-content').append(
+        '<hr class="my-1">' +
+        '<div id="exp-detail" class="row align-items-center">' +
+            '<div class="col-sm-2 col-5 text-center">' +
+                '<i class="fa fa-building fa-3x z-depth-1 blue darken-1 hoverable"></i>' +
+            '</div>' +
+
+            '<div class="col-sm-9 col-5">' +
+                '<h5>' + exp_com + '</h5>' +
+                '<span>' + exp_title + '</span><br/>' +
+                '<small>' + exp_start + ' - ' + exp_end + '</small>' +
+            '</div>' +
+
+            '<div class="col-sm-1 col-1 text-center">' +
+                '<a id="exp-detail-edit" class="fa fa-pencil fa-lg" style="display: none;" data-tooltip="tooltip" data-placement="right" title="Edit"></a>' +
+            '</div>' +
+        '</div>'
+    );
+}
+
+// Populate Profile Social Section
 function socialContent(s_id, s_type, s_url) {
     if (s_type.toLowerCase() == 'Behance'.toLowerCase()) {
         $name = s_type;

@@ -61,6 +61,7 @@
                     echo json_encode('pass');
                 }
                 else {
+                    echo mysqli_error($dbconn);
                     echo json_encode('fail');
                 }
             }
