@@ -23,15 +23,15 @@
     <!-- Material Design Bootstrap -->
     <link href="assets/framework/css/mdb.min.css" rel="stylesheet" />
 
-    <!-- Pace,js -->
-    <link href="assets/css/pace.css" rel="stylesheet" />
-
     <!-- Style -->
     <?php if ($_SERVER['REQUEST_URI'] == "/index.php" || $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] == "localhost/"): ?>
         <link href="assets/css/home-style.css" rel="stylesheet" />
     <?php else: ?>
         <link href="assets/css/style.css" rel="stylesheet" />
     <?php endif; ?>
+
+    <!-- Pace,js -->
+    <link href="assets/css/pace.css" rel="stylesheet" />
 
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">

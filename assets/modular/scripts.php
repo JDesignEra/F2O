@@ -12,7 +12,7 @@
 <script src="assets/framework/js/mdb.min.js" type="text/javascript"></script>
 
 <!-- Pace.js -->
-<script src="assets/js/pace.js" type="text/javascript"></script>
+<script src="assets/libraries/pace.js" type="text/javascript"></script>
 
 <!-- Custom Scripts -->
 <script src="assets/js/script.js" type="text/javascript"></script>

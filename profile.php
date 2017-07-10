@@ -276,37 +276,39 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
+                                                    <tr id="skills-edit">
                                                         <td>
                                                             <fieldset class="form-group">
                                                                 <input id="skills-check-1" name="skills_id-no" type="checkbox">
                                                                 <label for="skills-check-1"></label>
                                                             </fieldset>
                                                         </td>
-                                                        <td>Objective-C</td>
-                                                        <td>Code <i class="fa fa-code ml-1"></i></td>
+                                                        <td>
+                                                            <div class="md-form form-sm">
+                                                                <input id="skills-edit-1" name="skills_edit-no" placeholder="Objective C" type="text" />
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <select id="skills-type" name="skills-type" class="select">
+                                                                <option selected disabled>Select Category</option>
+                                                                <option data-icon="assets/img/skills-type-icon/code.png" class="z-depth-0">Code</option>
+                                                                <option data-icon="assets/img/skills-type-icon/design.png" class="z-depth-0">Design</option>
+                                                                <option data-icon="assets/img/skills-type-icon/development.png" class="z-depth-0">Development</option>
+                                                                <option data-icon="assets/img/skills-type-icon/writing.png" class="z-depth-0">Writing</option>
+                                                            </select>
+                                                        </td>
                                                     </tr>
-                                                    <!--
-                                                    <tr id="skills-input">
-                                                        <td></td>
-                                                        <td>
-                                                            <div class="md-form">
-                                                                <input id="skills-name" class="form-control" type="text" />
-                                                                <label for="skills-name">Skill</label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="md-form">
-                                                                <input id="skills-type" type="search" />
-                                                                <button class="mdb-autocomplete-clear">
-                                                                </button>
-                                                                <label for="skills-type" class="active">Type</label>
-                                                            </div>
-                                                        </td>
-                                                    </tr
-                                                    -->
                                                 </tbody>
                                             </table>
+
+                                            <hr class="my-1" />
+                                            <div class="row justify-content-end text-center">
+                                                <div class="col-12">
+                                                    <button id="skills-add-btn" class="btn cyan" type="button">Add <i class="fa fa-plus ml-1"></i></button>
+                                                    <button id="skills-del-btn" class="btn btn-danger">Delete <i class="fa fa-trash ml-1"></i></button>
+                                                    <button id="skills-save-btn" class="btn teal">Save <i class="fa fa-check ml-1"></i></button>
+                                                </div>
+                                            </div>
 										</form>
                                     </div>
                                 </div>

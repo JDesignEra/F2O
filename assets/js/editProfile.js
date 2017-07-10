@@ -1,4 +1,4 @@
-//MDBootstrap Related
+// MDBootstrap Related
 $(document).ready(function() {
     "use strict";
 
@@ -15,14 +15,16 @@ $(document).ready(function() {
         hiddenName: true,
     });
 
+    /*
     $('.mdb-autocomplete').mdb_autocomplete({
         data: skill-types
     });
+    */
 });
 
 $(document).ready(function() {
     // AJAX
-    //Edit Basic Profile Form
+    // Edit Basic Profile Form
     $('#profile form#e-basic-form').submit(function(e) {
         e.preventDefault();
 
@@ -191,6 +193,45 @@ $(document).ready(function() {
              $('#a-social-type.select').material_select('destroy');
              $('#a-social-type.select').material_select();
         }
+    });
+
+    // Populate Skills Add Form (skills-add-btn)
+    $('#profile form#skills-form #skills-add-btn').click(function(e) {
+        $.ajax({
+            type: 'POST',
+            url: 'assets/php/getSkillsType.php',
+            dataType: 'json',
+            success: function(data) {
+                //console.log(data);     // Debugging Purpose
+
+                var len = $('tr#skills-add').length,
+                    sel = '';
+
+                for (var i = 0; i < data.skill_types.length; i++) {
+                    sel += '<option value="' + data.skill_types[i].type + '" data-icon="assets/img/skills-type-icon/' + data.skill_types[i].sel_icon + '" class="z-depth-0">' + data.skill_types[i].type + '</option>';
+                }
+
+                $('#profile form#skills-form table#skills-table tbody').append(
+                    '<tr id="skills-add" class="animated fadeInUp">' +
+                        '<td></td>' +
+                        '<td>' +
+                            '<div class="md-form form-sm">' +
+                                '<input id="skills-name" name="skills-name' + len + '" class="form-control" placeholder="Skill" type="text" />' +
+                            '</div>' +
+                        '</td>' +
+                        '<td>' +
+                            '<select id="skills-type" name="skills-type' + len + '" class="select">' +
+                                '<option selected disabled>Select Category</option>' +
+                                sel +
+                            '</select>' +
+                        '</td>' +
+                    '</tr>'
+                );
+
+                 $('#skills-type.select').material_select('destroy');
+                 $('#skills-type.select').material_select();
+            }
+        });
     });
     // /.AJAX
 
@@ -539,6 +580,9 @@ $(document).ready(function() {
     });
     // /.Social Section
 
+    // Skills Section
+    // /.Skills Section
+
     // Experience Section
     // exp-add
     animateGenCol6('a#exp-add', 'experience', 'exp', 'expand');
@@ -549,7 +593,7 @@ $(document).ready(function() {
     // exp-present (Experience Form Present Checkbox)
     $('#profile #experience.section #exp-add-detail #exp-present').change(function() {
         if (this.checked) {
-            $('#profile #experience.section #exp-add-detail input[type="hidden"][name="exp-end"]').val('Present');
+            $('#profile #experience.section #exp-add-detail input[type="hidden"][name="exp-end"]').trigger('change').val('Present');
             $('#profile #experience.section #exp-add-detail input#exp-end').prop('disabled', true).prop('placeholder', 'Present');
         }
         else {

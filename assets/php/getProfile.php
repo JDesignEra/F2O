@@ -48,6 +48,11 @@
                     );
                 }
             }
+            // /.Retrieve socials table
+
+            // Retrieve skills table
+            $sql = "SELECT * FROM skills where acc_uid='$uid'";
+            // /.Retrieve skills table
 
             // Retrieve experiences table
             $sql = "SELECT * FROM experiences WHERE acc_uid='$uid'";

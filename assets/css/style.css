@@ -46,7 +46,7 @@ main {
 }
 
 #toast-container > div {
-    opacity: 0.9;
+    op
 }
 
 /* Special amp */
@@ -489,6 +489,10 @@ footer.page-footer h6 {
 #profile div.select input {
     height: 3.24rem !important;
     line-height: 1.5 !important;
+}
+
+#profile #skills-table div.select input {
+    height: 2.6rem !important;
 }
 
 #profile div.select ul li span,
