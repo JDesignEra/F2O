@@ -81,6 +81,14 @@ function expContent(exp_id, exp_com, exp_title, exp_start, exp_end) {
     );
 }
 
+// Populate Profile Skills Section
+function skillsContent(skills_id, skills_skill, skills_type) {
+    if (skills_type.toLowerCase() == 'Code'.toLowerCase()) {
+        $name = skills_skill;
+        $icon = '<i class="fa fa-code ml-1"></i>';
+    }
+}
+
 // Populate Profile Social Section
 function socialContent(s_id, s_type, s_url) {
     if (s_type.toLowerCase() == 'Behance'.toLowerCase()) {

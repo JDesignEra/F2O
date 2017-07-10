@@ -27,6 +27,7 @@
                     'title' => $ret['title'],
                     'bio' => $ret['bio'],
                     'socials' => array(),
+                    'skills' => array(),
                     'experiences' => array(),
 					'educations' => array(),
                 );
@@ -52,6 +53,19 @@
 
             // Retrieve skills table
             $sql = "SELECT * FROM skills where acc_uid='$uid'";
+            $result = mysqli_query($dbconn, $sql);
+            $count = mysqli_num_rows($result);
+
+            if ($count > 0) {
+                while ($ret = mysqli_fetch_assoc($result)) {
+                    array_push($profile['skills'], array(
+                            'skills_id' => $ret['uid'],
+                            'skill' => $ret['skill'],
+                            'type' => $ret['type'],
+                        )
+                    );
+                }
+            }
             // /.Retrieve skills table
 
             // Retrieve experiences table

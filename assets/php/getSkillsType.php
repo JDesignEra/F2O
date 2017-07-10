@@ -14,7 +14,6 @@
             array_push($type['skill_types'], array(
                     'type' => $ret['type'],
                     'sel_icon' => $ret['select_icon'],
-                    'icon' => $ret['icon'],
                 )
             );
         }

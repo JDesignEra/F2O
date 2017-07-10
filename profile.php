@@ -248,7 +248,11 @@
                                             <i class="fa fa-cogs mr-2"></i> Skills
                                         </h4>
                                         <hr class="my-1">
-
+                                        <!-- Skills Content -->
+                                        <div id="skills-content">
+                                        </div>
+                                        <!-- /.Skills Content -->
+                                        
                                         <div id="skills-detail">
                                             <div class="chip white-text blue">
                                                 <strong>Objective-C</strong>
