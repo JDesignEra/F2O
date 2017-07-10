@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2017 at 11:50 PM
+-- Generation Time: Jul 11, 2017 at 12:12 AM
 -- Server version: 10.1.24-MariaDB
 -- PHP Version: 7.1.6
 
@@ -44,6 +44,29 @@ CREATE TABLE `accounts` (
 
 INSERT INTO `accounts` (`uid`, `email`, `password`, `name`, `title`, `bio`, `code`) VALUES
 (1, 'tgm.joel@gmail.com', '$2y$10$0gyPo4mOZyvJOlqLZgun2.iNfmf.MuGJCSLSNmlgLnszPbc5kHGF6', 'Joel', 'Full-Stack Developer', 'I am a Freelance Full-Stack Developer and Designer with my branding, J.Design. I have been in this industry since 2012. Furthermore, I am skilled in various programming languages and design skills.', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `educations`
+--
+
+CREATE TABLE `educations` (
+  `uid` int(255) NOT NULL,
+  `acc_uid` int(255) NOT NULL,
+  `school` varchar(255) COLLATE utf8_unicode_520_ci NOT NULL,
+  `degree` varchar(255) COLLATE utf8_unicode_520_ci NOT NULL,
+  `field` varchar(255) COLLATE utf8_unicode_520_ci NOT NULL,
+  `start_date` varchar(255) COLLATE utf8_unicode_520_ci NOT NULL,
+  `end_date` varchar(255) COLLATE utf8_unicode_520_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
+
+--
+-- Dumping data for table `educations`
+--
+
+INSERT INTO `educations` (`uid`, `acc_uid`, `school`, `degree`, `field`, `start_date`, `end_date`) VALUES
+(1, 1, 'Nanyang Polytechnic', 'Diploma', 'Business Informatics', '2017-04-15', 'Present');
 
 -- --------------------------------------------------------
 
@@ -179,6 +202,13 @@ ALTER TABLE `accounts`
   ADD UNIQUE KEY `email` (`email`);
 
 --
+-- Indexes for table `educations`
+--
+ALTER TABLE `educations`
+  ADD PRIMARY KEY (`uid`),
+  ADD KEY `acc_uid` (`acc_uid`);
+
+--
 -- Indexes for table `experiences`
 --
 ALTER TABLE `experiences`
@@ -225,6 +255,11 @@ ALTER TABLE `social_types`
 ALTER TABLE `accounts`
   MODIFY `uid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT for table `educations`
+--
+ALTER TABLE `educations`
+  MODIFY `uid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `experiences`
 --
 ALTER TABLE `experiences`
@@ -252,6 +287,12 @@ ALTER TABLE `social_types`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `educations`
+--
+ALTER TABLE `educations`
+  ADD CONSTRAINT `educations_ibfk_1` FOREIGN KEY (`acc_uid`) REFERENCES `accounts` (`uid`);
 
 --
 -- Constraints for table `experiences`
