@@ -69,7 +69,7 @@
                                                 <textarea id="e-bio" name="e-bio" class="md-textarea" type="text" maxlength="255" length="255" placeholder=""></textarea>
                                                 <label for="e-bio">Summary</label>
                                             </div>
-                                            <button class="btn teal" type="submit">
+                                            <button class="btn teal">
                                                 Save <i class="fa fa-check ml-1"></i>
                                             </button>
                                             <button id="cp-basic-form-cancel" class="btn btn-danger" type="reset">
@@ -253,6 +253,7 @@
                                             <div class="chip white-text blue">
                                                 <strong>Objective-C</strong>
                                                 <i class="fa fa-code ml-1"></i>
+												<i class="close fa fa-times ml-1"></i>
                                             </div>
                                             <div class="chip white-text blue">
                                                 <strong>C#</strong>
@@ -263,6 +264,50 @@
                                                 <i class="fa fa-code ml-1"></i>
                                             </div>
                                         </div>
+
+										<hr id="hr-skills-add-detail" class="my-1" style="display: none;">
+										<form id="skills-form" method="post">
+                                            <table  id="skills-table" class="table table-sm table-hover">
+                                                <thead class="primary-color text-white">
+                                                    <tr>
+                                                        <th></th>
+                                                        <th>Skills</th>
+                                                        <th>Type</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <fieldset class="form-group">
+                                                                <input id="skills-check-1" name="skills_id-no" type="checkbox">
+                                                                <label for="skills-check-1"></label>
+                                                            </fieldset>
+                                                        </td>
+                                                        <td>Objective-C</td>
+                                                        <td>Code <i class="fa fa-code ml-1"></i></td>
+                                                    </tr>
+                                                    <!--
+                                                    <tr id="skills-input">
+                                                        <td></td>
+                                                        <td>
+                                                            <div class="md-form">
+                                                                <input id="skills-name" class="form-control" type="text" />
+                                                                <label for="skills-name">Skill</label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="md-form">
+                                                                <input id="skills-type" type="search" />
+                                                                <button class="mdb-autocomplete-clear">
+                                                                </button>
+                                                                <label for="skills-type" class="active">Type</label>
+                                                            </div>
+                                                        </td>
+                                                    </tr
+                                                    -->
+                                                </tbody>
+                                            </table>
+										</form>
                                     </div>
                                 </div>
                             </section>
@@ -373,106 +418,86 @@
                                             <i class="fa fa-graduation-cap mr-2"></i> Education
                                         </h4>
 
-                                        <hr class="my-1">
-
-                                        <div id="edu-detail" class="row align-items-center">
-                                            <div class="col-sm-2 col-5 text-center">
-                                                <i class="fa fa-book fa-3x z-depth-1 blue darken-1 hoverable"></i>
-                                            </div>
-
-                                            <div class="col-sm-9 col-5">
-                                                <h5>Nanyang Polytechnic</h5>
-                                                <span>Diploma &nbsp;&bull;&nbsp;</span>
-                                                <span>Business Informatics</span><br/>
-                                                <small>2012 - Present</small>
-                                            </div>
-
-                                            <div class="col-sm-1 col-1 text-center">
-                                                <a id="edu-detail-edit" style="display: none;" class="fa fa-pencil fa-lg" data-toggle="tooltip" data-placement="right" title="Edit"></a>
-                                            </div>
-                                        </div>
-
-                                        <hr class="my-1">
-
-                                        <div id="edu-detail" class="row align-items-center">
-                                            <div class="col-sm-2 col-5 text-center">
-                                                <i class="fa fa-book fa-3x z-depth-1 blue darken-1 hoverable"></i>
-                                            </div>
-
-                                            <div class="col-sm-9 col-5">
-                                                <h5>Nanyang Polytechnic</h5>
-                                                <span>Diploma &nbsp;&bull;&nbsp;</span>
-                                                <span>Business Informatics</span><br/>
-                                                <small>2012 - Present</small>
-                                            </div>
-
-                                            <div class="col-sm-1 col-1 text-center">
-                                                <a id="edu-detail-edit" style="display: none;" class="fa fa-pencil fa-lg" data-toggle="tooltip" data-placement="right" title="Edit"></a>
-                                            </div>
-                                        </div>
+										<!-- Education Contents -->
+										<div id="edu-content">
+										</div>
+										<!-- /.Education Contents -->
 
                                         <!-- Edu Add Form -->
                                         <hr id="hr-edu-add-detail" class="my-1" style="display: none;">
-                                        <div id="edu-add-detail" class="row align-items-center" style="display:none;">
-                                            <div class="col-12">
-                                                <div class="row align-items-center">
-                                                    <div class="col-sm-2 col-5 text-center">
-                                                        <i class="fa fa-book fa-3x z-depth-1 blue darken-1 hoverable"></i>
-                                                    </div>
+										<form id="add-edu-form" method="post">
+											<div id="edu-add-detail" class="row align-items-center" style="display:none;">
+	                                            <div class="col-12">
+	                                                <div class="row align-items-center">
+	                                                    <div class="col-sm-2 col-5 text-center">
+	                                                        <i class="fa fa-book fa-3x z-depth-1 blue darken-1 hoverable"></i>
+	                                                    </div>
 
-                                                    <div class="col-sm-10 col-6">
-                                                        <div class="row justify-content-center">
-                                                            <div class="col-12">
-                                                                <div class="md-form">
-                                                                    <input id="edu-school" type="text">
-                                                                    <label for="edu-school">School</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+	                                                    <div class="col-sm-10 col-6">
+	                                                        <div class="row justify-content-center">
+	                                                            <div class="col-12">
+	                                                                <div class="md-form">
+	                                                                    <input id="edu-school" name="edu-school" type="text">
+	                                                                    <label for="edu-school">School</label>
+	                                                                </div>
+	                                                            </div>
+	                                                        </div>
 
-                                                        <div class="row justify-content-center">
-                                                            <div class="col-6">
-                                                                <div class="md-form">
-                                                                    <input id="edu-degree" type="text">
-                                                                    <label for="edu-degree">Degree</label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6">
-                                                                <div class="md-form">
-                                                                    <input id="exp-field" type="text">
-                                                                    <label for="exp-field">Field Of Study</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+	                                                        <div class="row justify-content-center">
+	                                                            <div class="col-6">
+	                                                                <div class="md-form">
+	                                                                    <input id="edu-degree" name="edu-degree" type="text">
+	                                                                    <label for="edu-degree">Degree</label>
+	                                                                </div>
+	                                                            </div>
+	                                                            <div class="col-6">
+	                                                                <div class="md-form">
+	                                                                    <input id="edu-field" name="edu-field" type="text">
+	                                                                    <label for="edu-field">Field Of Study</label>
+	                                                                </div>
+	                                                            </div>
+	                                                        </div>
 
-                                                        <div class="row justify-content-center">
-                                                            <div class="col-6">
-                                                                <div class="md-form">
-                                                                    <input id="exp-start" type="text" placeholder="Pick Date" class="form-control datepicker">
-                                                                    <label for="exp-start">Start Date</label>
+	                                                        <div class="row justify-content-center">
+	                                                            <div class="col-6">
+	                                                                <div class="md-form">
+	                                                                    <input id="edu-start" name="edu-start" type="text" placeholder="Pick Date" class="form-control datepicker">
+	                                                                    <label for="edu-start">Start Date</label>
+	                                                                </div>
+	                                                            </div>
+	                                                            <div class="col-6">
+	                                                                <div class="md-form">
+	                                                                    <input id="edu-end" name="edu-end" placeholder="Pick Date" type="text" class="form-control datepicker">
+	                                                                    <label for="edu-end">End Date</label>
+	                                                                </div>
+	                                                            </div>
+	                                                        </div>
+
+															<div class="row text-left align-items-start">
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <input id="edu-present" type="checkbox">
+                                                                        <label for="edu-present">I currently study here</label>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
-                                                                <div class="md-form">
-                                                                    <input id="exp-end" placeholder="Present" value="Present" type="text" class="form-control datepicker">
-                                                                    <label for="exp-end">End Date</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row justify-content-center text-center">
-                                                    <div class="col-12">
-                                                        <button id="edu-save" class="btn teal">
-                                                            Save <i class="fa fa-check ml-1"></i>
-                                                        </button>
-                                                        <button id="edu-cancel" id="exp-cancel" class="btn btn-danger">
-                                                            Cancel <i class="fa fa-ban ml-1"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+
+	                                                    </div>
+	                                                </div>
+
+	                                                <div class="row justify-content-center text-center">
+	                                                    <div class="col-12">
+	                                                        <button id="edu-save" class="btn teal" type="submit">
+	                                                            Save <i class="fa fa-check ml-1"></i>
+	                                                        </button>
+	                                                        <button id="edu-cancel" id="edu-cancel" class="btn btn-danger" type="reset">
+	                                                            Cancel <i class="fa fa-ban ml-1"></i>
+	                                                        </button>
+	                                                    </div>
+	                                                </div>
+	                                            </div>
+	                                        </div>
+										</form>
                                         <!-- /.Edu Add Form -->
                                     </div>
                                 </div>

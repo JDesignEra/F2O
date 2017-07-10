@@ -27,12 +27,39 @@ $(document).ready(function() {
                 $('[data-tooltip="tooltip"]').tooltip();
             }
 
+			// Populate Profile Education Section
+			for (i = 0; i < data.educations.length; i++) {
+				eduContent(data.educations[i].edu_id, data.educations[i].edu_sch, data.educations[i].edu_degree, data.educations[i].edu_field, data.educations[i].edu_start, data.educations[i].edu_end);
+				$('[data-tooltip="tooltip"]').tooltip();
+			}
+
             document.title = document.title + " | " + data.name + "'s Profile";
         }
     });
 });
 
-// Populate Profile Experiences Section
+// Populate Profile Education Section Function
+function eduContent(edu_id, edu_sch, edu_degree, edu_field, edu_start, edu_end) {
+	$('#profile div#edu-content').append(
+		'<hr class="my-1">' +
+		'<div id="edu-detail" class="row align-items-center">' +
+			'<div class="col-sm-2 col-5 text-center">' +
+				'<i class="fa fa-book fa-3x z-depth-1 blue darken-1 hoverable"></i>' +
+			'</div>' +
+			'<div class="col-sm-9 col-5">' +
+				'<h5>' + edu_sch + '</h5>' +
+				'<span>' + edu_degree + ' &nbsp;&bull;&nbsp;</span>' +
+				'<span>' + edu_field + '</span><br/>' +
+				'<small>' + edu_start + ' - ' + edu_end + '</small>' +
+			'</div>' +
+			'<div class="col-sm-1 col-1 text-center">' +
+				'<a id="edu-detail-edit" style="display: none;" class="fa fa-pencil fa-lg" data-toggle="tooltip" data-placement="right" title="Edit"></a>' +
+			'</div>' +
+		'</div>'
+	);
+}
+
+// Populate Profile Experiences Section Function
 function expContent(exp_id, exp_com, exp_title, exp_start, exp_end) {
     $('#profile div#exp-content').append(
         '<hr class="my-1">' +

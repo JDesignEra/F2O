@@ -2,7 +2,7 @@
     /* AJAX check  */
     if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
         header('Content-type: application/json');
-        
+
         require('db.php');
 
         if (!isset($_SESSION)) {
@@ -35,9 +35,15 @@
                     echo json_encode('eb-fail');
                 }
                 else {
-                    $sql = "UPDATE accounts SET name=IF(LENGTH('$name')=0, name), title=IF(LENGTH('$title')=0, title), bio=IF(LENGTH('$bio')=0, bio) WHERE uid='$uid'";
+                    $sql = "UPDATE accounts SET name=IF(LENGTH('$name') = 0, name, '$name'), title=IF(LENGTH('$title') = 0, title, '$title'), bio=IF(LENGTH('$bio') = 0, bio, '$bio') WHERE uid='$uid'";
+					$result = mysqli_query($dbconn, $sql);
 
-                    echo json_encode('eb-pass');
+					if ($result) {
+						echo json_encode('eb-pass');
+					}
+					else {
+						echo json_encode('fail');
+					}
                 }
             }
         }

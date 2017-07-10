@@ -9,6 +9,7 @@
         $result = mysqli_query($dbconn, $sql);
 
         $type['s_type'] = array();
+
         while ($ret = mysqli_fetch_assoc($result)) {
             array_push($type['s_type'], $ret['type']);
         }

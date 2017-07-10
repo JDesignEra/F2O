@@ -15,14 +15,9 @@ $(document).ready(function() {
         hiddenName: true,
     });
 
-    //#exp-end_root
-    /*
-    $('#exp-end_root .picker__button--today').click(function() {
-        console.log('passed');
-        var picker = $('#exp-end').pickadate('picker');
-        picker.set('select', 'Present');
+    $('.mdb-autocomplete').mdb_autocomplete({
+        data: skill-types
     });
-    */
 });
 
 $(document).ready(function() {
@@ -47,10 +42,13 @@ $(document).ready(function() {
                 else if (data == 'eb-pass') {
                     toastr.success('Changes saved');
 
-                    setTimeout(function() {
+					setTimeout(function() {
                         document.location.reload(true);
                     }, 500);
                 }
+				else if (data == 'fail') {
+					toastr.danger('Changes are not saved, contact F2O support');
+				}
             }
         });
     });
@@ -91,7 +89,6 @@ $(document).ready(function() {
         e.preventDefault();
 
         var result = $('#profile #add-exp-form').serialize();
-        console.log(result);
 
         $.ajax({
             type: 'POST',
@@ -99,7 +96,7 @@ $(document).ready(function() {
             data: result,
             dataType: 'json',
             success: function(data) {
-                console.log(data);  //Debugging Purpose
+                //console.log(data);  //Debugging Purpose
 
                 if (data == 'company-empty') {
                     toastr.warning('Empty company field');
@@ -129,6 +126,52 @@ $(document).ready(function() {
             }
         });
     });
+
+	// Education Add Form
+	$('#profile form#add-edu-form').submit(function(e) {
+		e.preventDefault();
+
+		var result = $('#profile #add-edu-form').serialize();
+
+		$.ajax({
+			type: 'POST',
+			url: 'assets/php/addEducation.php',
+			data: result,
+			dataType: 'json',
+			success: function(data) {
+				//console.log(data);	//Debugging Purpose
+
+				if (data == 'sch-empty') {
+					toastr.warning('Empty school field');
+				}
+				else if (data == 'degree-empty') {
+					toastr.warning('Empty degree field');
+				}
+				else if (data == 'field-empty') {
+					toastr.warning('Empty field of study field');
+				}
+				else if (data == 'start-empty') {
+					toastr.warning('Empty start date field');
+				}
+				else if (data == 'end-empty') {
+					toastr.warning('Empty end date field');
+				}
+				else if (data == 'start-fail') {
+					toastr.error('Invalid start date format');
+				}
+				else if (data == 'end-fail') {
+					toastr.error('Invalid end date format');
+				}
+				else if (data == 'pass') {
+					toastr.success('Education added successfully');
+
+					setTimeout(function () {
+						document.location.reload(true);
+					}, 500);
+				}
+			}
+		});
+	});
 
     // Populate Social Form Select
     $.ajax ({
@@ -531,7 +574,18 @@ $(document).ready(function() {
 
     // edu-cancel
     animateGenCol6('button#edu-cancel', 'education', 'edu', 'shrink');
-    // /.Education Section
+
+	// edu-present (Education Form Present Checkbox)
+    $('#profile #education.section #edu-add-detail #edu-present').change(function() {
+        if (this.checked) {
+            $('#profile #education.section #edu-add-detail input[type="hidden"][name="edu-end"]').val('Present');
+            $('#profile #education.section #edu-add-detail input#edu-end').prop('disabled', true).prop('placeholder', 'Present');
+        }
+        else {
+            $('#profile #education.section #edu-add-detail input[type="hidden"][name="edu-end"]').val('');
+            $('#profile #education.section #edu-add-detail input#edu-end').prop('disabled', false).prop('placeholder', 'Pick Date');
+        }
+    });
 
     // edu-edit
     $('#profile #education.section').mouseenter(function () {

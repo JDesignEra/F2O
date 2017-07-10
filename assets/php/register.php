@@ -5,10 +5,6 @@
 
         require('db.php');
 
-        if (!isset($_SESSION)) {
-            session_start();
-        }
-
         $email = $_POST['r-email'];
         $pass = $_POST['r-pass'];
         $name = $_POST['r-name'];
@@ -25,9 +21,7 @@
 
         $sql = "SELECT * FROM accounts WHERE email='$email'";
         $result = mysqli_query($dbconn, $sql);
-
         $count = mysqli_num_rows($result);
-
 
         if ($name == "") {
             echo json_encode('name-empty');
@@ -47,7 +41,7 @@
         elseif (strlen($pass) > 32) {
             echo json_encode('pass-max');
         }
-        elseif ($count <= 0) {
+        elseif ($count == 0) {
             //Hash password
             $pass = password_hash($pass, PASSWORD_BCRYPT);
 
@@ -61,6 +55,6 @@
         }
     }
 
-    mysqli_close($dbconn);
+    //mysqli_close($dbconn);
     exit();
 ?>

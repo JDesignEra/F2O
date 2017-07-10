@@ -29,7 +29,7 @@ $(document).ready(function() {
             data: result,
             dataType: 'json',
             success: function(data) {
-                //console.log(data); // Debugging Purpose
+                console.log(data); // Debugging Purpose
 
                 if (data == 'exist') {
                     toastr.error('Email is registered');

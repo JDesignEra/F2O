@@ -28,6 +28,7 @@
                     'bio' => $ret['bio'],
                     'socials' => array(),
                     'experiences' => array(),
+					'educations' => array(),
                 );
             }
             // /.Retrieve accounts table
@@ -73,6 +74,33 @@
                 }
             }
             // /.Retrieve experiences table
+
+			// Retrieve educations table
+			$sql = "SELECT * FROM educations WHERE acc_uid='$uid'";
+			$result = mysqli_query($dbconn, $sql);
+			$count = mysqli_num_rows($result);
+
+			if ($count > 0) {
+				while ($ret = mysqli_fetch_assoc($result)) {
+					if (!strcasecmp($ret['end_date'], 'Present') == 0) {
+                        $exp_end = date('Y', strtotime($ret['end_date']));
+                    }
+                    else {
+                        $exp_end = $ret['end_date'];
+                    }
+
+					array_push($profile['educations'], array(
+						'edu_id' => $ret['uid'],
+						'edu_sch' => $ret['school'],
+						'edu_degree' => $ret['degree'],
+						'edu_field' => $ret['field'],
+						'edu_start' => date('Y', strtotime($ret['start_date'])),
+						'edu_end' => $exp_end,
+						)
+					);
+				}
+			}
+			// /.Retrieve educations table
 
             echo json_encode($profile);
         }
