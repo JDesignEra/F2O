@@ -252,7 +252,7 @@
                                         <div id="skills-content">
                                         </div>
                                         <!-- /.Skills Content -->
-                                        
+
                                         <div id="skills-detail">
                                             <div class="chip white-text blue">
                                                 <strong>Objective-C</strong>
@@ -280,6 +280,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    <!--
                                                     <tr id="skills-edit">
                                                         <td>
                                                             <fieldset class="form-group">
@@ -302,6 +303,7 @@
                                                             </select>
                                                         </td>
                                                     </tr>
+                                                    -->
                                                 </tbody>
                                             </table>
 

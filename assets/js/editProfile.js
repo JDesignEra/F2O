@@ -86,6 +86,26 @@ $(document).ready(function() {
         });
     });
 
+    // Skills Form
+    $('#profile form#skills-form').submit(function(e) {
+        e.preventDefault();
+
+        var result = $('#profile form#skills-form').serialize();
+        console.log(result);
+
+        $.ajax({
+            type: 'POST',
+            url: 'assets/php/addSocialLinks.php',
+            data: result,
+            dataType: 'json',
+            success: function(data) {
+                //console.log(data);      // Debugging Purpose
+                
+            }
+        });
+    });
+    // /.Skills Form
+
     // Experience Add Form
     $('#profile form#add-exp-form').submit(function(e) {
         e.preventDefault();
@@ -216,11 +236,11 @@ $(document).ready(function() {
                         '<td></td>' +
                         '<td>' +
                             '<div class="md-form form-sm">' +
-                                '<input id="skills-name" name="skills-name' + len + '" class="form-control" placeholder="Skill" type="text" />' +
+                                '<input id="skills-name" name="skills-name[' + len + ']" class="form-control" placeholder="Skill" type="text" />' +
                             '</div>' +
                         '</td>' +
                         '<td>' +
-                            '<select id="skills-type" name="skills-type' + len + '" class="select">' +
+                            '<select id="skills-type" name="skills-type[' + len + ']" class="select">' +
                                 '<option selected disabled>Select Category</option>' +
                                 sel +
                             '</select>' +
