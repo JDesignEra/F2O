@@ -92,7 +92,7 @@
                         <div class="col-11">
                             <div class="row justify-content-center">
                                 <!-- Message Card -->
-                                <div class="col-6">
+                                <div class="col-lg-6">
                                     <section id="message" class="section wow fadeInLeft">
                                         <div id="cp-msg" class="card hoverable">
                                             <!-- Card Data -->
@@ -135,7 +135,7 @@
                                 <!-- /.Message Card -->
 
                                 <!-- Job Card -->
-                                <div class="col-6">
+                                <div class="col-lg-6">
                                     <section id="job" class="section wow fadeInRight">
                                         <div id="cp-job" class="card hoverable">
                                             <!-- Card Data -->
@@ -238,8 +238,8 @@
 
                             <!-- Skills Section -->
                             <section id="skills" class="section wow fadeInLeft">
-                                <div class="card hoverable">
-                                    <a id="skills-add" class="btn-floating btn-action secondary-color wow fadeInRight" data-toggle="tooltip" data-placement="right" title="Edit">
+                                <div id="cp-skills" class="card hoverable">
+                                    <a id="skills-edit" class="btn-floating btn-action secondary-color" data-toggle="tooltip" data-placement="right" title="Edit">
                                         <i class="fa fa-pencil"></i>
                                     </a>
 
@@ -253,25 +253,9 @@
                                         </div>
                                         <!-- /.Skills Content -->
 
-                                        <div id="skills-detail">
-                                            <div class="chip white-text blue">
-                                                <strong>Objective-C</strong>
-                                                <i class="fa fa-code ml-1"></i>
-												<i class="close fa fa-times ml-1"></i>
-                                            </div>
-                                            <div class="chip white-text blue">
-                                                <strong>C#</strong>
-                                                <i class="fa fa-code ml-1"></i>
-                                            </div>
-                                            <div class="chip white-text blue">
-                                                <strong>Java</strong>
-                                                <i class="fa fa-code ml-1"></i>
-                                            </div>
-                                        </div>
-
 										<hr id="hr-skills-add-detail" class="my-1" style="display: none;">
-										<form id="skills-form" method="post">
-                                            <table  id="skills-table" class="table table-sm table-hover">
+										<form id="skills-form" method="post" style="display: none;">
+                                            <table id="skills-table" class="table table-sm table-hover">
                                                 <thead class="primary-color text-white">
                                                     <tr>
                                                         <th></th>
@@ -280,39 +264,15 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <!--
-                                                    <tr id="skills-edit">
-                                                        <td>
-                                                            <fieldset class="form-group">
-                                                                <input id="skills-check-1" name="skills_id-no" type="checkbox">
-                                                                <label for="skills-check-1"></label>
-                                                            </fieldset>
-                                                        </td>
-                                                        <td>
-                                                            <div class="md-form form-sm">
-                                                                <input id="skills-edit-1" name="skills_edit-no" placeholder="Objective C" type="text" />
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <select id="skills-type" name="skills-type" class="select">
-                                                                <option selected disabled>Select Category</option>
-                                                                <option data-icon="assets/img/skills-type-icon/code.png" class="z-depth-0">Code</option>
-                                                                <option data-icon="assets/img/skills-type-icon/design.png" class="z-depth-0">Design</option>
-                                                                <option data-icon="assets/img/skills-type-icon/development.png" class="z-depth-0">Development</option>
-                                                                <option data-icon="assets/img/skills-type-icon/writing.png" class="z-depth-0">Writing</option>
-                                                            </select>
-                                                        </td>
-                                                    </tr>
-                                                    -->
                                                 </tbody>
                                             </table>
 
-                                            <hr class="my-1" />
+                                            <hr class="my-1">
                                             <div class="row justify-content-end text-center">
                                                 <div class="col-12">
                                                     <button id="skills-add-btn" class="btn cyan" type="button">Add <i class="fa fa-plus ml-1"></i></button>
-                                                    <button id="skills-del-btn" class="btn btn-danger">Delete <i class="fa fa-trash ml-1"></i></button>
-                                                    <button id="skills-save-btn" class="btn teal">Save <i class="fa fa-check ml-1"></i></button>
+                                                    <button id="skills-del-btn" class="btn btn-danger" type="button">Delete <i class="fa fa-trash ml-1"></i></button>
+                                                    <button id="skills-save-btn" class="btn teal" type="button">Save <i class="fa fa-check ml-1"></i></button>
                                                 </div>
                                             </div>
 										</form>

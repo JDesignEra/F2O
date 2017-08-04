@@ -43,10 +43,7 @@ main {
 /* toast */
 #toast-container .toast {
     width: 400px;
-}
-
-#toast-container > div {
-    op
+    top: 50px;
 }
 
 /* Special amp */
@@ -405,7 +402,7 @@ footer.page-footer h6 {
     text-transform: uppercase;
 }
 
-#profile #misc .col-6 {
+#profile #misc .col-lg-6 {
     margin-top: 2rem;
 }
 
@@ -414,8 +411,12 @@ footer.page-footer h6 {
         margin-bottom: 0;
     }
 
-    #profile #misc .col-6 {
+    #profile #misc .col-lg-6 {
         margin-top: 4rem;
+    }
+
+    #profile #misc section#message {
+        margin-bottom: 0;
     }
 }
 
@@ -492,7 +493,7 @@ footer.page-footer h6 {
 }
 
 #profile #skills-table div.select input {
-    height: 2.6rem !important;
+    height: 3.38rem !important;
 }
 
 #profile div.select ul li span,

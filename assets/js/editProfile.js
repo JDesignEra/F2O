@@ -14,12 +14,6 @@ $(document).ready(function() {
         formatSubmit: 'yyyy-mm-dd',
         hiddenName: true,
     });
-
-    /*
-    $('.mdb-autocomplete').mdb_autocomplete({
-        data: skill-types
-    });
-    */
 });
 
 $(document).ready(function() {
@@ -85,26 +79,6 @@ $(document).ready(function() {
             }
         });
     });
-
-    // Skills Form
-    $('#profile form#skills-form').submit(function(e) {
-        e.preventDefault();
-
-        var result = $('#profile form#skills-form').serialize();
-        console.log(result);
-
-        $.ajax({
-            type: 'POST',
-            url: 'assets/php/addSocialLinks.php',
-            data: result,
-            dataType: 'json',
-            success: function(data) {
-                //console.log(data);      // Debugging Purpose
-                
-            }
-        });
-    });
-    // /.Skills Form
 
     // Experience Add Form
     $('#profile form#add-exp-form').submit(function(e) {
@@ -215,8 +189,122 @@ $(document).ready(function() {
         }
     });
 
+    // Skills Form
+    // Populate Skills Edit Form (skills-edit)
+    $.ajax({
+        type: 'POST',
+        url: 'assets/php/getSkillsType.php',
+        dataType: 'json',
+        success: function(data) {
+            //console.log(data);      // Debugging Purpose
+
+            $('getProfile.js').ready(function() {
+                $('#profile section#skills div#skills-content div.chip').each(function(index) {
+                    skill_id = $(this).attr('id');
+                    skill_name = $(this).find('strong').text();
+                    skill_type = $(this).find('i.fa').attr('id');
+                    var sel = '';
+
+                    // Build Select Option for skill type
+                    for (var i = 0; i < data.skill_types.length; i++) {
+                        selected = (skill_type.toLowerCase == data.skill_types[i].type.toLowerCase ? 'selected' : '');
+
+                        sel += '<option value="' + data.skill_types[i].type + '" data-icon="assets/img/skills-type-icon/' + data.skill_types[i].sel_icon + '" class="z-depth-0" ' + selected + '>' + data.skill_types[i].type + '</option>';
+                    }
+
+                    if ($('#profile section#skills #skills-form #skills-table tbody tr#skills-edit-' + skill_id).length == 0) {
+                        $('#profile form#skills-form table#skills-table tbody').append(
+                            '<tr id="skills-edit-' + skill_id + '" class="animated fadeInUp">' +
+                                '<td>' +
+                                    '<div class="form-group" style="margin-top: 1.1rem;">' +
+                                        '<input type="checkbox" id="delete-' + skill_id + '" name="delete[' + skill_id + ']">' +
+                                        '<label for="delete-' + skill_id + '"></label>' +
+                                    '</div>' +
+                                '</td>' +
+                                '<td>' +
+                                    '<div class="md-form">' +
+                                        '<input id="skills-name" name="new-skills-name[' + skill_id + ']" class="form-control" placeholder="' + skill_name + '" type="text" />' +
+                                    '</div>' +
+                                '</td>' +
+                                '<td>' +
+                                    '<select id="skills-type" name="new-skills-type[' + skill_id + ']" class="select">' +
+                                        '<option value="" disabled>Select Category</option>' +
+                                        sel +
+                                    '</select>' +
+                                '</td>' +
+                            '</tr>'
+                        );
+                    }
+
+                    $('#skills-type.select').material_select('destroy');
+                    $('#skills-type.select').material_select();
+                });
+            });
+        }
+    });
+
+    // Skills Save
+    $('#profile form#skills-form #skills-save-btn').click(function(e) {
+        e.preventDefault();
+
+        var result = $('#profile form#skills-form').serialize();
+        console.log(result);
+
+        $.ajax({
+            type: 'POST',
+            url: 'assets/php/skillsForm.php',
+            data: result,
+            dataType: 'json',
+            success: function(data) {
+                //console.log(data);      // Debugging Purpose
+                if (data == 'pass') {
+                    toastr.success('Skills has been updated/saved successfully');
+                }
+                else if(data == 'fail') {
+                    toastr.danger('Skills has not been updated/saved, please try again');
+                }
+
+                setTimeout(function() {
+                    document.location.reload(true);
+                }, 500);
+            }
+        });
+    });
+
+    // Skills Delete Form (skills-del-btn)
+    $('#profile form#skills-form #skills-del-btn').click(function(e) {
+        e.preventDefault();
+        console.log($('#skills-form').serialize());
+
+        $.ajax({
+            type: 'POST',
+            data: $('#skills-form').serialize(),
+            url: 'assets/php/deleteSkills.php',
+            dataType: 'json',
+            success: function(data) {
+                console.log(data);      // Debugging Purpose
+
+                if (data == 'empty') {
+                    toastr.warning('No skill(s) selected / checked for deletion');
+                }
+                else if (data == 'pass') {
+                    toastr.success('Skill(s) has been deleted successfully');
+
+                    setTimeout(function () {
+						document.location.reload(true);
+					}, 500);
+                }
+                else if (data == 'fail') {
+                    toastr.danger('Skill(s) has not been deleted, please try again');
+                }
+            }
+        });
+    });
+
     // Populate Skills Add Form (skills-add-btn)
     $('#profile form#skills-form #skills-add-btn').click(function(e) {
+        e.preventDefault();
+
         $.ajax({
             type: 'POST',
             url: 'assets/php/getSkillsType.php',
@@ -227,34 +315,37 @@ $(document).ready(function() {
                 var len = $('tr#skills-add').length,
                     sel = '';
 
+                // Build Select Option for skill type
                 for (var i = 0; i < data.skill_types.length; i++) {
                     sel += '<option value="' + data.skill_types[i].type + '" data-icon="assets/img/skills-type-icon/' + data.skill_types[i].sel_icon + '" class="z-depth-0">' + data.skill_types[i].type + '</option>';
                 }
 
                 $('#profile form#skills-form table#skills-table tbody').append(
-                    '<tr id="skills-add" class="animated fadeInUp">' +
+                    '<tr id="skills-add">' +
                         '<td></td>' +
                         '<td>' +
-                            '<div class="md-form form-sm">' +
-                                '<input id="skills-name" name="skills-name[' + len + ']" class="form-control" placeholder="Skill" type="text" />' +
+                            '<div class="md-form">' +
+                                '<input id="skills-name" name="new-skills-name[' + len + ']" class="form-control" placeholder="Skill" type="text" />' +
                             '</div>' +
                         '</td>' +
                         '<td>' +
-                            '<select id="skills-type" name="skills-type[' + len + ']" class="select">' +
-                                '<option selected disabled>Select Category</option>' +
+                            '<select id="skills-type" name="new-skills-type[' + len + ']" class="select">' +
+                                '<option value="" selected>Select Category</option>' +
                                 sel +
                             '</select>' +
                         '</td>' +
                     '</tr>'
                 );
 
-                 $('#skills-type.select').material_select('destroy');
-                 $('#skills-type.select').material_select();
+                $('#skills-type.select').material_select('destroy');
+                $('#skills-type.select').material_select();
             }
         });
     });
+    // /.Skills Form
     // /.AJAX
 
+    // ANIMATION & APPERANCE FUNCTIONS
     // Basic-Detail Section
     // Change Cover Photo
     $('#profile #basic-detail.section #cp-cover-edit').mouseenter(function() {
@@ -582,7 +673,7 @@ $(document).ready(function() {
                 $linkBack.show().addClass('animated flipOutX').one(animationEnd, function() {
                     $linkBack.removeClass('animated flipOutX');
 
-                    setTimeout(function () {
+                    setTimeout(function() {
                         $linkBack.html(url);
                         $linkBack.addClass('animated flipInX').one(animationEnd, function() {
                             $linkBack.removeClass('animated flipInX');
@@ -601,6 +692,60 @@ $(document).ready(function() {
     // /.Social Section
 
     // Skills Section
+    $('#profile #skills.section a#skills-edit').click(function(e) {
+        e.preventDefault();
+        var nowHeight = 0, newHeight = 0;
+
+        if (!$('#profile #skills.section form#skills-form').is(':visible')) {
+            nowHeight = $('#profile #skills.section div#cp-skills div.card-block').outerHeight();
+            newHeight = $('#profile #skills.section div#cp-skills div#skills-content').outerHeight(true) + $('#profile #skills.section div#cp-skills form#skills-form').show().outerHeight(true) + $('#profile div#cp-skills hr#hr-skills-add-detail').outerHeight(true) + $('#profile #skills.section div#cp-skills hr.my-1').outerHeight(true) + $('#profile #skills.section div#cp-skills div.card-block h4.card-title').outerHeight() + parseFloat($('#profile div#cp-skills .card-block').css('padding-bottom')) + parseFloat($('#profile div#cp-skills .card-block').css('padding-top'));
+
+            $('#hr-skills-add-detail').fadeIn(1000);
+            $('#profile #skills.section form#skills-form').addClass('animated fadeInUp').one(animationEnd, function () {
+                $('#profile #skills.section form#skills-form').removeClass('animated fadeInUp fadeOutDown');
+            });
+
+            $('#profile #skills.section a#skills-edit').addClass('animated flipOutY').one(animationEnd, function() {
+                $('#profile #skills.section a#skills-edit').removeClass('animated flipOutY').hide();
+
+                setTimeout(function () {
+                    $('#profile #skills.section a#skills-edit').show().addClass('animated flipInY').one(animationEnd, function() {
+                        $('#profile #skills.section a#skills-edit').removeClass('animated flipInY');
+                    });
+                }, 100);
+            });
+
+            $('#profile #skills.section div#cp-skills.card .card-block').outerHeight(nowHeight).animate({
+                height: newHeight
+            }, 1000);
+        }
+        else {      // Fix expand animation
+            nowHeight = $('#profile #skills.section div#cp-skills.card-block').outerHeight();
+            newHeight = $('#profile #skills.section div#cp-skills div#skills-content').outerHeight(true) + $('#profile #skills.section div#cp-skills hr.my-1').outerHeight(true) + $('#profile #skills.section div#cp-skills div.card-block h4.card-title').outerHeight() + parseFloat($('#profile div#cp-skills .card-block').css('padding-bottom')) + parseFloat($('#profile div#cp-skills .card-block').css('padding-top'));
+
+            console.log(nowHeight);
+            console.log(newHeight);
+
+            $('#hr-skills-add-detail').fadeOut(1000);
+            $('#profile #skills.section a#skills-edit').addClass('animated flipOutY').one(animationEnd, function() {
+                $('#profile #skills.section a#skills-edit').removeClass('animated flipOutY').hide();
+
+                setTimeout(function () {
+                    $('#profile #skills.section a#skills-edit').show().addClass('animated flipInY').one(animationEnd, function() {
+                        $('#profile #skills.section a#skills-edit').removeClass('animated flipInY');
+                    });
+                }, 100);
+            });
+
+            $('#profile #skills.section div#cp-skills.card .card-block').outerHeight(nowHeight).animate({
+                height: newHeight
+            }, 1000);
+
+            $('#profile #skills.section form#skills-form').addClass('animated fadeOutDown').one(animationEnd, function() {
+                $('#profile #skills.section form#skills-form').hide().removeClass('animated fadeOutDown fadeInUp');
+            });
+        }
+    });
     // /.Skills Section
 
     // Experience Section

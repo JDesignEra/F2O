@@ -95,6 +95,12 @@ nav .logged.dropdown .dropdown-item.red-text:hover {
     }
 }
 
+/* toast */
+#toast-container .toast {
+    width: 400px;
+    top: 50px;
+}
+
 /* login-reg-fgtpass Modal */
 #login-reg-fgtpass #panel-login .modal-body,
 #login-reg-fgtpass #panel-reg .modal-body,

@@ -1,7 +1,8 @@
 <?php
-/* AJAX check  */
-if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-    header('Content-type: application/json');
+    /* AJAX check  */
+    if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+        header('Content-type: application/json');
+
         require('db.php');
 
         if (!isset($_SESSION)) {
@@ -10,24 +11,28 @@ if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQU
 
         if (isset($_SESSION['uid'])) {
             $uid = $_SESSION['uid'];
+            $add_status = '';
 
-            $skills = $_POST['skills-name'];
-            $types = $_POST['skills-type'];
-            $skill_uids = $_POST['skills-id'];
+            // Insert new skill into database
+            foreach (array_combine($_POST['new-skills-name'], $_POST['new-skills-type']) as $key => $value) {
+                if ($key != '' && $value != '') {
+                    $sql = "INSERT INTO skills (acc_uid, skill, type) VALUES('$uid', '$key', '$value')";
+                    $result = mysqli_query($dbconn, $sql);
 
-
-        }
-        /*
-        foreach ($skills as $key => $value) {
-            if (isset($_POST['skills-id'])) {
-                $sql = "SELECT * FROM skills WHERE uid='$uids'";
-                $result = mysqli_query($dbconn, $sql);
-                $count = mysqli_num_rows($result);
-
-                if ($count > 0) {
-                    $sql = "UPDATE skills SET skills=IF(LENGTH('$skills') = 0, skills, '$value')";
+                    if ($result && $add_status != 'fail') {
+                        $add_status = 'pass';
+                    }
+                    else {
+                        echo mysqli_error($dbconn);
+                        $add_status = 'fail';
+                    }
                 }
             }
-        }*/
-}
+
+            echo json_encode($add_status);
+        }
+    }
+
+    mysqli_close($dbconn);
+    exit();
 ?>

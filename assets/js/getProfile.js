@@ -33,6 +33,11 @@ $(document).ready(function() {
 				$('[data-tooltip="tooltip"]').tooltip();
 			}
 
+            // Populate Skills Section
+            for (i = 0; i < data.skills.length; i++) {
+                skillsContent(data.skills[i].skills_id, data.skills[i].skill, data.skills[i].type);
+            }
+
             document.title = document.title + " | " + data.name + "'s Profile";
         }
     });
@@ -82,11 +87,30 @@ function expContent(exp_id, exp_com, exp_title, exp_start, exp_end) {
 }
 
 // Populate Profile Skills Section
-function skillsContent(skills_id, skills_skill, skills_type) {
+function skillsContent(skills_id, skills_name, skills_type) {
     if (skills_type.toLowerCase() == 'Code'.toLowerCase()) {
-        $name = skills_skill;
-        $icon = '<i class="fa fa-code ml-1"></i>';
+        $name = skills_name;
+        $icon = '<i id="Code" class="fa fa-code ml-1"></i>';
     }
+    else if(skills_type.toLowerCase() == 'Design'.toLowerCase()) {
+        $name = skills_name;
+        $icon = '<i id="Design" class="fa fa-paint-brush ml-1"></i>';
+    }
+    else if(skills_type.toLowerCase() == 'Development'.toLowerCase()) {
+        $name = skills_name;
+        $icon = '<i id="Development" class="fa fa-cogs ml-1"></i>';
+    }
+    else if (skills_type.toLowerCase() == 'Writing'.toLowerCase()) {
+        $name = skills_name;
+        $icon = '<i id="Writing" class="fa fa-pencil ml-1"></i>';
+    }
+
+    $('#profile div#skills-content').append(
+        '<div id="' + skills_id + '" class="chip white-text blue">' +
+            '<strong>' + skills_name +'</strong>' +
+            $icon +
+        '</div>'
+    );
 }
 
 // Populate Profile Social Section
