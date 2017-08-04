@@ -196,7 +196,7 @@ $(document).ready(function() {
         url: 'assets/php/getSkillsType.php',
         dataType: 'json',
         success: function(data) {
-            //console.log(data);      // Debugging Purpose
+            console.log(data);      // Debugging Purpose
 
             $('getProfile.js').ready(function() {
                 $('#profile section#skills div#skills-content div.chip').each(function(index) {
@@ -207,7 +207,7 @@ $(document).ready(function() {
 
                     // Build Select Option for skill type
                     for (var i = 0; i < data.skill_types.length; i++) {
-                        selected = (skill_type.toLowerCase == data.skill_types[i].type.toLowerCase ? 'selected' : '');
+                        selected = (skill_type.toLowerCase() == data.skill_types[i].type.toLowerCase() ? 'selected' : '');
 
                         sel += '<option value="' + data.skill_types[i].type + '" data-icon="assets/img/skills-type-icon/' + data.skill_types[i].sel_icon + '" class="z-depth-0" ' + selected + '>' + data.skill_types[i].type + '</option>';
                     }
@@ -260,13 +260,16 @@ $(document).ready(function() {
                 if (data == 'pass') {
                     toastr.success('Skills has been updated/saved successfully');
                 }
+                else if (data == 'exist') {
+                    toastr.warning('One or more skill(s) has not been updated/saved as it exist');
+                }
                 else if(data == 'fail') {
-                    toastr.danger('Skills has not been updated/saved, please try again');
+                    toastr.error('Skills has not been updated/saved, please try again');
                 }
 
                 setTimeout(function() {
                     document.location.reload(true);
-                }, 500);
+                }, 600);
             }
         });
     });
