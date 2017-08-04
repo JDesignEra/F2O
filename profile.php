@@ -247,7 +247,7 @@
                                         <h4 class="card-title">
                                             <i class="fa fa-cogs mr-2"></i> Skills
                                         </h4>
-                                        <hr class="my-1">
+                                        
                                         <!-- Skills Content -->
                                         <div id="skills-content">
                                         </div>

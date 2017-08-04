@@ -223,11 +223,11 @@ $(document).ready(function() {
                                 '</td>' +
                                 '<td>' +
                                     '<div class="md-form">' +
-                                        '<input id="skills-name" name="new-skills-name[' + skill_id + ']" class="form-control" placeholder="' + skill_name + '" type="text" />' +
+                                        '<input id="skills-name" name="edit-skills-name[' + skill_id + ']" class="form-control" placeholder="' + skill_name + '" type="text" />' +
                                     '</div>' +
                                 '</td>' +
                                 '<td>' +
-                                    '<select id="skills-type" name="new-skills-type[' + skill_id + ']" class="select">' +
+                                    '<select id="skills-type" name="edit-skills-type[' + skill_id + ']" class="select">' +
                                         '<option value="" disabled>Select Category</option>' +
                                         sel +
                                     '</select>' +
@@ -313,7 +313,7 @@ $(document).ready(function() {
                 //console.log(data);     // Debugging Purpose
 
                 var len = $('tr#skills-add').length,
-                    sel = '';
+                        sel = '';
 
                 // Build Select Option for skill type
                 for (var i = 0; i < data.skill_types.length; i++) {
@@ -336,6 +336,8 @@ $(document).ready(function() {
                         '</td>' +
                     '</tr>'
                 );
+
+                $('#profile #skills.section div#cp-skills.card .card-block').css('height', 'auto');
 
                 $('#skills-type.select').material_select('destroy');
                 $('#skills-type.select').material_select();

@@ -35,6 +35,10 @@ $(document).ready(function() {
 
             // Populate Skills Section
             for (i = 0; i < data.skills.length; i++) {
+                if (i == 0) {
+                    $('#profile #skills.section div.card-block div#skills-content').before('<hr class="my-1">');
+                }
+
                 skillsContent(data.skills[i].skills_id, data.skills[i].skill, data.skills[i].type);
             }
 
