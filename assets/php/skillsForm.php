@@ -36,7 +36,7 @@
             // Update skills into database
             if (isset($_POST['edit-skills-name'] ) && isset($_POST['edit-skills-type'])) {
                 $index = 0;
-                
+
                 foreach (array_combine($_POST['edit-skills-name'], $_POST['edit-skills-type']) as $key => $value) {
                     echo json_encode($key);
                     echo json_encode($value);
