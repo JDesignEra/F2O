@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- Modal -->
+<div id="messages-modal" class="modal fade animated pulse" style="margin-top: 7%;" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header cyan white-text">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title w-100" id="myModalLabel">INBOX</h4>
+            </div>
+            <!--Body-->
+            <div class="modal-body">
+                <table id="msg-table" class="table  table-hover">
+                    <thead class="primary-color text-white" align="center">
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Subject</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="light-blue lighten-5">
+                            <td>
+                                <fieldset class="form-group">
+                                    <input id="msg-select" name="msg-id" type="radio">
+                                    <label for="msg-select"></label>
+                                </fieldset>
+                            </td>
+                            <td>
+                                User's Name
+                            </td>
+                            <td>
+                                User's Email
+                            </td>
+                            <td>
+                                Subject
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--Footer-->
+            <div class="modal-footer">
+                <button class="btn teal" type="button">Reply</button>
+                <button class="btn btn-danger" type="submit" data-dismiss="modal">Delete</button>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!-- /.Modal -->

@@ -45,4 +45,10 @@
     </div>
 </nav>
 
-<?php include('assets/modular/login-reg-fgtpass_modal.html');?>
+<?php
+    include('assets/modular/login-reg-fgtpass_modal.html');
+
+    if ($_SERVER['REQUEST_URI'] == "/profile.php") {
+        include('assets/modular/messages_modal.html');
+    }
+?>

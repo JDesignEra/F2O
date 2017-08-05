@@ -123,8 +123,7 @@
                                                         <p>Unread Message</p>
                                                     </div>
                                                 </div>
-
-                                                <button class="btn btn-cyan">
+                                                <button class="btn btn-cyan" data-toggle="modal" data-target="#messages-modal">
                                                     Open Inbox&nbsp;<i class="fa fa-envelope-open ml-1"></i>
                                                 </button>
                                             </div>
@@ -247,7 +246,7 @@
                                         <h4 class="card-title">
                                             <i class="fa fa-cogs mr-2"></i> Skills
                                         </h4>
-                                        
+
                                         <!-- Skills Content -->
                                         <div id="skills-content">
                                         </div>

@@ -196,7 +196,7 @@ $(document).ready(function() {
         url: 'assets/php/getSkillsType.php',
         dataType: 'json',
         success: function(data) {
-            console.log(data);      // Debugging Purpose
+            //console.log(data);      // Debugging Purpose
 
             $('getProfile.js').ready(function() {
                 $('#profile section#skills div#skills-content div.chip').each(function(index) {
@@ -285,7 +285,7 @@ $(document).ready(function() {
             url: 'assets/php/deleteSkills.php',
             dataType: 'json',
             success: function(data) {
-                console.log(data);      // Debugging Purpose
+                //console.log(data);      // Debugging Purpose
 
                 if (data == 'empty') {
                     toastr.warning('No skill(s) selected / checked for deletion');

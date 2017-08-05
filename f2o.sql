@@ -2,8 +2,8 @@
 -- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 11, 2017 at 12:16 AM
+-- Host: localhost
+-- Generation Time: Aug 05, 2017 at 10:50 AM
 -- Server version: 10.1.24-MariaDB
 -- PHP Version: 7.1.6
 
@@ -95,6 +95,30 @@ INSERT INTO `experiences` (`uid`, `acc_uid`, `company`, `title`, `start_date`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `uid` int(255) NOT NULL,
+  `acc_uid` int(255) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_520_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_520_ci NOT NULL,
+  `subject` varchar(255) COLLATE utf8_unicode_520_ci NOT NULL,
+  `message` varchar(2000) COLLATE utf8_unicode_520_ci NOT NULL,
+  `status` varchar(10) COLLATE utf8_unicode_520_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`uid`, `acc_uid`, `name`, `email`, `subject`, `message`, `status`) VALUES
+(1, 1, 'Admin', 'test@email.com', 'Testing Subject', 'This is a test mail', 'new'),
+(2, 1, 'Admin', 'test@email.com', 'Testing Subject', 'This is a test mail', 'new');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `skills`
 --
 
@@ -104,6 +128,13 @@ CREATE TABLE `skills` (
   `skill` varchar(255) COLLATE utf8_unicode_520_ci NOT NULL,
   `type` varchar(255) COLLATE utf8_unicode_520_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
+
+--
+-- Dumping data for table `skills`
+--
+
+INSERT INTO `skills` (`uid`, `acc_uid`, `skill`, `type`) VALUES
+(1, 1, 'Java', 'Code');
 
 -- --------------------------------------------------------
 
@@ -216,6 +247,13 @@ ALTER TABLE `experiences`
   ADD KEY `acc_uid` (`acc_uid`);
 
 --
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`uid`),
+  ADD KEY `acc_uid` (`acc_uid`);
+
+--
 -- Indexes for table `skills`
 --
 ALTER TABLE `skills`
@@ -265,10 +303,15 @@ ALTER TABLE `educations`
 ALTER TABLE `experiences`
   MODIFY `uid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `uid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `skills`
 --
 ALTER TABLE `skills`
-  MODIFY `uid` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `uid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `skill_types`
 --
@@ -299,6 +342,12 @@ ALTER TABLE `educations`
 --
 ALTER TABLE `experiences`
   ADD CONSTRAINT `experiences_ibfk_1` FOREIGN KEY (`acc_uid`) REFERENCES `accounts` (`uid`);
+
+--
+-- Constraints for table `messages`
+--
+ALTER TABLE `messages`
+  ADD CONSTRAINT `messages_ibfk_1` FOREIGN KEY (`acc_uid`) REFERENCES `accounts` (`uid`);
 
 --
 -- Constraints for table `skills`
