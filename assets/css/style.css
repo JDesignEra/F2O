@@ -523,7 +523,11 @@ body#freelancers #members.section #cp.card .card-share .social-reveal,
 body#freelancers #members.section #cp .card-share .social-reveal-active, {
     width: 75% !important;
     right: 10px;
-    z-index: 0;
+    z-index: 1;
+}
+
+body#freelancers #members.section #cp .card-share {
+    z-index: 1;
 }
 
 body#freelancers #members.section #members-content .col-lg-4 {
