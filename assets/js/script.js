@@ -59,7 +59,7 @@ $(document).ready(function () {
         });
     });
 
-    $('a#view-profile').on('click', function() {
+    $(document).on('click', 'a#view-profile', function() {
         var result = $(this).attr('value');
         window.location = 'user.php?' + result;
     });

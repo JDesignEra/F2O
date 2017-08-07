@@ -1,4 +1,11 @@
 $(document).ready(function() {
+    //Social reveal
+    $(document).on('click', '.card-share > a', function (e) {
+        e.preventDefault(); // prevent default action - hash doesn't appear in url
+        $(this).parent().find('div').toggleClass('social-reveal-active');
+        $(this).toggleClass('share-expanded');
+    });
+
     var url = window.location.href;
     var result = {'uid' : url.substring(url.indexOf('?')+1)};
 
