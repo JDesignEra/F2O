@@ -47,7 +47,7 @@ $(document).ready(function() {
                 url: 'assets/php/unreadMessageCounts.php',
                 dataType: 'json',
                 success: function(data) {
-                    console.log(data);      // Debugging Purpose
+                    //console.log(data);      // Debugging Purpose
                     $('#profile #message.section #msg-unread[role=progressbar]').css('width', data);
                     $('#profile #message.section #msg-unread[role=progressbar]').attr('aria-valuenow', data);
                     $('#profile #message.section div.card-block h4 span#msg-unread-count').text(data);
@@ -90,7 +90,7 @@ $(document).ready(function() {
             data: result,
             dataType: 'json',
             success: function(data) {
-                console.log(data);      // Debugging Purpose
+                //console.log(data);      // Debugging Purpose
 
                 if (data != '' && data !='fail') {
                     $('div#messages-modal div.modal-footer a#msg-reply-btn').attr('href', 'mailto:' + data);

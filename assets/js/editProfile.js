@@ -276,7 +276,6 @@ $(document).ready(function() {
     // Skills Delete Form (skills-del-btn)
     $('#profile form#skills-form #skills-del-btn').click(function(e) {
         e.preventDefault();
-        console.log($('#skills-form').serialize());
 
         $.ajax({
             type: 'POST',
@@ -784,9 +783,6 @@ $(document).ready(function() {
         else {      // Fix expand animation
             nowHeight = $('#profile #skills.section div#cp-skills.card-block').outerHeight();
             newHeight = $('#profile #skills.section div#cp-skills div#skills-content').outerHeight(true) + $('#profile #skills.section div#cp-skills hr.my-1').outerHeight(true) + $('#profile #skills.section div#cp-skills div.card-block h4.card-title').outerHeight() + parseFloat($('#profile div#cp-skills .card-block').css('padding-bottom')) + parseFloat($('#profile div#cp-skills .card-block').css('padding-top'));
-
-            console.log(nowHeight);
-            console.log(newHeight);
 
             $('#hr-skills-add-detail').fadeOut(1000);
             $('#profile #skills.section a#skills-edit').addClass('animated flipOutY').one(animationEnd, function() {

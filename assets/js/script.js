@@ -3,12 +3,10 @@
 $(document).ready(function () {
     "use strict";
     //Prevent Console Log Message
-    /*
     var console = {};
     console.warn = function() {};
     console.error = function() {};
     console.log = function() {};
-    */
 
     // MDBootstrap Related
     // Wow Animation Initialization
@@ -45,7 +43,7 @@ $(document).ready(function () {
                 type: 'POST',
                 dataType: 'json',
                 success: function(data) {
-                    console.log(data);      // Debugging Purpose
+                    //console.log(data);      // Debugging Purpose
 
                     if (data == 'pass') {
                         toastr.success('Logged out successfully');

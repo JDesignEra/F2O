@@ -15,7 +15,7 @@ $(document).ready(function() {
         data: result,
         dataType: 'json',
         success: function(data) {
-            console.log(data);      // Debugging Purpose
+            //console.log(data);      // Debugging Purpose
 
             if (data != 'invalid') {
                 document.title = "F2O | " + data.name + "'s Profile";
