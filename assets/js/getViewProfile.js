@@ -108,7 +108,7 @@ $(document).ready(function() {
             data: result,
             dataType: 'json',
             success: function(data) {
-                console.log(data);      // Debugging Purpose
+                //console.log(data);      // Debugging Purpose
 
                 $('form#contact-user-form div#loading').fadeOut(600);
 
