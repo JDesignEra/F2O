@@ -29,7 +29,7 @@ $(document).ready(function() {
             data: result,
             dataType: 'json',
             success: function(data) {
-                console.log(data); // Debugging Purpose
+                //console.log(data); // Debugging Purpose
 
                 if (data == 'exist') {
                     toastr.error('Email is registered');
@@ -250,7 +250,7 @@ $(document).ready(function() {
                     toastr.error('Maximum password characters is 32');
                 }
                 else if (data == 'pass-pass') {
-                    toastr.success('Updated Password successfully');
+                    toastr.success('UpdatedPassword changed successfully');
 
                     $('form#f-email-form').trigger('reset');
                     $('form#f-code-form').trigger('reset');
@@ -261,6 +261,97 @@ $(document).ready(function() {
                     }, 500);
 
                     $('#login-reg-fgtpass').modal('hide');
+                }
+            }
+        });
+    });
+
+    // Home Register
+    $('form#home-regForm').submit(function(e) {
+        e.preventDefault();
+
+        var result = $('form#home-regForm').serialize();
+
+        $.ajax({
+            type: 'POST',
+            url: 'assets/php/register.php',
+            data: result,
+            dataType: 'json',
+            success: function(data) {
+                //console.log(data); // Debugging Purpose
+
+                if (data == 'exist') {
+                    toastr.error('Email is registered');
+                }
+                else if (data == 'name-empty') {
+                    toastr.warning('Empty name field');
+                }
+                else if (data == 'email-empty') {
+                    toastr.warning('Empty email field');
+                }
+                else if (data == 'email-fail') {
+                    toastr.errorerror('Wrong email format');
+                }
+                else if (data == 'pass-empty') {
+                    toastr.warning('Empty password field');
+                }
+                else if (data == 'pass-min') {
+                    toastr.error('Minimum password characters is 8');
+                }
+                else if (data == 'pass-max') {
+                    toastr.error('Maximum password characters is 32');
+                }
+                else if (data == 'pass') {
+                    $('#login-reg-fgtpass').modal('hide');
+                    toastr.success('Registered successfully');
+
+                    setTimeout(function() {
+                        document.location.reload(true);
+                    }, 500);
+                }
+            }
+        });
+    });
+
+    // Home Login
+    $('form#home-loginForm').submit(function(e) {
+        e.preventDefault();
+
+        var result = $('form#home-loginForm').serialize();
+
+        $.ajax({
+            type: 'POST',
+            url: 'assets/php/login.php',
+            data: result,
+            dataType: 'json',
+            success: function(data) {
+                //console.log(data); // Debugging Purpose
+
+                if (data == 'email-empty') {
+                    toastr.warning('Empty email field');
+                }
+                else if (data == 'pass-empty') {
+                    toastr.warning('Empty password field');
+                }
+                else if (data == 'email-fail') {
+                    toastr.error('Wrong email format');
+                }
+                else if (data == 'pass-min') {
+                    toastr.error('Minimum password characters is 8');
+                }
+                else if (data == 'pass-max') {
+                    toastr.error('Maximum password characters is 32');
+                }
+                else if (data == 'fail') {
+                    toastr.error('Wrong login credentials');
+                }
+                else if (data == 'pass') {
+                    $('#login-reg-fgtpass').modal('hide');
+                    toastr.success('Login successfully');
+
+                    setTimeout(function() {
+                        document.location.reload(true);
+                    }, 500);
                 }
             }
         });

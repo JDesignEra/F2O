@@ -55,6 +55,6 @@
         }
     }
 
-    //mysqli_close($dbconn);
+    mysqli_close($dbconn);
     exit();
 ?>

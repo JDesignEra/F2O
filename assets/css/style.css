@@ -32,6 +32,7 @@ button {
 }
 
 main {
+    min-height: 100%;
     padding-top: 7rem;
 }
 
@@ -402,7 +403,7 @@ footer.page-footer h6 {
     text-transform: uppercase;
 }
 
-#profile #misc .col-lg-6 {
+#profile #misc .col-12 {
     margin-top: 2rem;
 }
 
@@ -501,5 +502,30 @@ footer.page-footer h6 {
     font-size: 0.9rem !important;
     text-align: center !important;
 }
-
 /* /.profile.php */
+
+/* freelancers.php */
+body#freelancers #members.section #members-content .col-lg-4 {
+    padding-bottom: 30px;
+}
+/* /.freelancers.php */
+
+/* cp and vp card */
+body#freelancers #members.section #cp.card .card-up,
+body#user #vp-user.section #vp.card .card-up {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 18em;
+}
+
+body#freelancers #members.section #cp.card .card-share .social-reveal,
+body#freelancers #members.section #cp .card-share .social-reveal-active, {
+    width: 75% !important;
+    right: 10px;
+    z-index: 0;
+}
+
+body#freelancers #members.section #members-content .col-lg-4 {
+    display: inline-block;
+}

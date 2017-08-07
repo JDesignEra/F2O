@@ -43,7 +43,7 @@
 
             if (password_verify($pass, $ret['password'])) {
                 $_SESSION['uid'] = $ret['uid'];
-                
+
                 echo json_encode('pass');
             }
             else {

@@ -8,12 +8,23 @@ $(document).ready(function() {
 
             $('#profile #p-name').html(data.name);
             $('#profile form#e-basic-form  #e-name').prop('placeholder', data.name);
+            $('nav ul.navbar-nav div.logged a.chip img').after(data.name);
 
             $('#profile #p-title').html(data.title);
             $('#profile form#e-basic-form  #e-title').prop('placeholder', data.title);
 
             $('#profile #p-bio').html(data.bio);
             $('#profile form#e-basic-form  #e-bio').prop('placeholder', data.bio);
+
+            // Populate Profile Photo
+            if(data.photo != 'default.png') {
+                $('#profile #cp-basic.card .avatar').css('background-image', 'url(assets/uploads/' + data.photo + ')');
+                $('nav ul.navbar-nav div.logged a.chip img').attr('src', 'assets/uploads/' + data.photo);
+            }
+
+            if (data.cover != 'default-card-up.png') {
+                $('#profile #cp-basic.card .card-up').css('background-image', 'url(assets/uploads/' + data.cover + ')');
+            }
 
             // Populate Profile Social Section
             for (var i = 0; i < data.socials.length; i++) {
@@ -42,7 +53,14 @@ $(document).ready(function() {
                 skillsContent(data.skills[i].skills_id, data.skills[i].skill, data.skills[i].type);
             }
 
-            document.title = document.title + " | " + data.name + "'s Profile";
+            // Populate Inbox Modal
+            for (i = 0; i < data.messages.length; i++) {
+                msgContent(i, data.messages[i].msg_id, data.messages[i].name, data.messages[i].email, data.messages[i].subject, data.messages[i].msg, data.messages[i].status);
+            }
+
+            if (document.location.href.indexOf('/profile.php') > -1) {
+                document.title = document.title + " | " + data.name + "'s Profile";
+            }
         }
     });
 });
@@ -246,5 +264,35 @@ function socialContent(s_id, s_type, s_url) {
                 '</a>' +
             '</div>' +
         '</div>'
+    );
+}
+
+// Populate messages modal
+function msgContent(index, msg_id, name, email, subject, msg, status) {
+    statusStyle = (status == 'new' ? 'teal lighten-5' : '');
+
+    $('#profile #messages-modal .modal-body table#msg-table tbody').append(
+        '<tr id="' + msg_id + '" class="' + statusStyle + '" style="cursor: pointer;">' +
+            '<td>' +
+                '<fieldset class="form-group">' +
+                    '<input id="msg-select" class="with-gap" name="msg-select" value="' + msg_id + '" type="radio">' +
+                    '<label for="msg-select"></label>' +
+                '</fieldset>' +
+            '</td>' +
+            '<td>' +
+                name +
+            '</td>' +
+            '<td>' +
+                email +
+            '</td>' +
+            '<td>' +
+                subject +
+            '</td>' +
+        '</tr>' +
+        '<tr id="open-msg-' + msg_id + '" style="display: none;">' +
+            '<td colspan="4">' +
+                msg +
+            '</td>' +
+        '</tr>'
     );
 }

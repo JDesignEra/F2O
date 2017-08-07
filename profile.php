@@ -2,13 +2,11 @@
 <html lang="en">
     <!-- Head, Navigation & Intro Section -->
     <?php
-        //$title = "Profile [1]";
+        include('assets/php/secure.php');
         include('assets/modular/head.php');
     ?>
     <header>
-        <?php
-            include('assets/modular/nav.php');
-        ?>
+        <?php include('assets/modular/nav.php'); ?>
     </header>
 
     <body id="profile">
@@ -21,7 +19,7 @@
                             <!-- Card -->
                             <div id="cp-basic" class="card testimonial-card hoverable">
                                 <!-- Cover Photo -->
-                                <a id="cp-cover-edit" class="card-up text-right">
+                                <a id="cp-cover-edit" class="card-up text-right" data-toggle="modal" data-target="#upload-cover-modal">
                                     <button id="change-cover" class="btn">
                                         <span style="display: none;">Change Cover Photo&nbsp;</span>
                                         <i class="fa fa-picture-o"></i>
@@ -36,7 +34,7 @@
                                 <!-- /.Edit buttons -->
 
                                 <!-- Photo -->
-                                <a id="cp-avatar-edit" class="avatar text-right align-bottom z-depth-1 hoverable">
+                                <a id="cp-avatar-edit" class="avatar text-right align-bottom z-depth-1 hoverable" data-toggle="modal" data-target="#upload-avatar-modal">
                                     <div id="change-avatar" class="white-text text-center" style="display:none; -webkit-animation-duration:0.5s">Change Profile Photo<i class="fa fa-picture-o"></i></div>
                                 </a>
                                 <!-- /.Photo -->
@@ -92,7 +90,7 @@
                         <div class="col-11">
                             <div class="row justify-content-center">
                                 <!-- Message Card -->
-                                <div class="col-lg-6">
+                                <div class="col-12">
                                     <section id="message" class="section wow fadeInLeft">
                                         <div id="cp-msg" class="card hoverable">
                                             <!-- Card Data -->
@@ -100,7 +98,7 @@
                                                 <i class="fa fa-envelope z-depth-1 white-text blue darken-2"></i>
                                                 <div class="data">
                                                     <p>Unread Message</p>
-                                                    <h3>1</h3>
+                                                    <h3 id="msg-unread-data">0</h3>
                                                 </div>
                                             </div>
                                             <!-- /.Card Data -->
@@ -110,16 +108,16 @@
                                                 <div class="row">
                                                     <div class="col-6">
                                                         <div class="progress">
-                                                            <div class="progress-bar bg-success wow slideInLeft" data-wow-delay="0.5s" role="progressbar" style="width: 5%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div id="msg-space" class="progress-bar bg-success wow slideInLeft" data-wow-delay="0.5s" role="progressbar" style="width: 0%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
-                                                        <h4>1 / 100</h4>
+                                                        <h4><span id="msg-space-count">0</span> / 100</h4>
                                                         <p>Message Space</p>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="progress">
-                                                            <div class="progress-bar bg-danger wow slideInLeft" data-wow-delay="0.5s" role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div id="msg-unread" class="progress-bar bg-danger wow slideInLeft" data-wow-delay="0.5s" role="progressbar" style="width: 0%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
-                                                        <h4>1 / 100</h4>
+                                                        <h4><span id="msg-unread-count">0</span> / 100</h4>
                                                         <p>Unread Message</p>
                                                     </div>
                                                 </div>
@@ -132,49 +130,6 @@
                                     </section>
                                 </div>
                                 <!-- /.Message Card -->
-
-                                <!-- Job Card -->
-                                <div class="col-lg-6">
-                                    <section id="job" class="section wow fadeInRight">
-                                        <div id="cp-job" class="card hoverable">
-                                            <!-- Card Data -->
-                                            <div class="card-up">
-                                                <i class="fa fa-briefcase z-depth-1 white-text blue darken-2"></i>
-                                                <div class="data">
-                                                    <p>Uncompleted Job</p>
-                                                    <h3>1</h3>
-                                                </div>
-                                            </div>
-                                            <!-- /.Card Data -->
-
-                                            <!-- Card Content-->
-                                            <div class="card-block text-center">
-                                                <div class="row">
-                                                    <div class="col-6">
-                                                        <div class="progress">
-                                                            <div class="progress-bar bg-success wow slideInLeft" data-wow-delay="0.5s" role="progressbar" style="width: 5%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                        <h4>1 / 100</h4>
-                                                        <p>Jobs</p>
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <div class="progress">
-                                                            <div class="progress-bar bg-danger wow slideInLeft" data-wow-delay="0.5s" role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                        <h4>1 / 100</h4>
-                                                        <p>Uncomplete Jobs</p>
-                                                    </div>
-                                                </div>
-
-                                                <button class="btn btn-cyan">
-                                                    Open Job List&nbsp;<i class="fa fa-pencil-square-o ml-1"></i>
-                                                </button>
-                                            </div>
-                                            <!-- /.Card Content -->
-                                        </div>
-                                    </section>
-                                </div>
-                                <!-- /.Job Card -->
                             </div>
                         </div>
                     </div>

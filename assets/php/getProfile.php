@@ -26,10 +26,13 @@
                     'name' => $ret['name'],
                     'title' => $ret['title'],
                     'bio' => $ret['bio'],
+                    'photo' => $ret['photo'],
+                    'cover' => $ret['cover'],
                     'socials' => array(),
                     'skills' => array(),
                     'experiences' => array(),
 					'educations' => array(),
+                    'messages' => array(),
                 );
             }
             // /.Retrieve accounts table
@@ -120,6 +123,26 @@
 				}
 			}
 			// /.Retrieve educations table
+
+            // Retrieve messages table
+            $sql = "SELECT * FROM messages WHERE acc_uid='$uid'";
+			$result = mysqli_query($dbconn, $sql);
+			$count = mysqli_num_rows($result);
+
+            if ($count > 0) {
+                while ($ret = mysqli_fetch_assoc($result)) {
+                    array_push($profile['messages'], array(
+                            'msg_id' => $ret['uid'],
+                            'name' => $ret['name'],
+                            'email' => $ret['email'],
+                            'subject' => $ret['subject'],
+                            'msg' => $ret['message'],
+                            'status' => $ret['status'],
+                        )
+                    );
+                }
+            }
+            // /.Retrieve messages table
 
             echo json_encode($profile);
         }

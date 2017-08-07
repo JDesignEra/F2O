@@ -5,10 +5,6 @@
 
         require('db.php');
 
-        if (!isset($_SESSION)) {
-            session_start();
-        }
-
         if (isset($_SESSION['uid'])) {
             if(isset($_POST['delete'])) {
                 foreach ($_POST['delete'] as $key => $value) {

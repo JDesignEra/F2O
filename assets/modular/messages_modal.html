@@ -4,50 +4,35 @@
     <div class="modal-dialog modal-lg" role="document">
         <!--Content-->
         <div class="modal-content">
-            <!--Header-->
-            <div class="modal-header cyan white-text">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title w-100" id="myModalLabel">INBOX</h4>
-            </div>
-            <!--Body-->
-            <div class="modal-body">
-                <table id="msg-table" class="table  table-hover">
-                    <thead class="primary-color text-white" align="center">
-                        <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Subject</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="light-blue lighten-5">
-                            <td>
-                                <fieldset class="form-group">
-                                    <input id="msg-select" name="msg-id" type="radio">
-                                    <label for="msg-select"></label>
-                                </fieldset>
-                            </td>
-                            <td>
-                                User's Name
-                            </td>
-                            <td>
-                                User's Email
-                            </td>
-                            <td>
-                                Subject
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <!--Footer-->
-            <div class="modal-footer">
-                <button class="btn teal" type="button">Reply</button>
-                <button class="btn btn-danger" type="submit" data-dismiss="modal">Delete</button>
-            </div>
+            <form id="msg-form" method="post">
+                <!--Header-->
+                <div class="modal-header cyan white-text">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title w-100">INBOX</h4>
+                </div>
+                <!--Body-->
+                <div class="modal-body">
+                    <table id="msg-table" class="table table-hover z-depth-1">
+                        <thead class="primary-color text-white">
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Subject</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <!--Footer-->
+                <div class="modal-footer">
+                    <a id="msg-reply-btn" class="btn teal">Reply</a>
+                    <button id="msg-del-btn" class="btn btn-danger" type="submit">Delete</button>
+                </div>
+            </form>
         </div>
         <!--/.Content-->
     </div>

@@ -6,10 +6,6 @@
         require('db.php');
         require('generatePin.php');
 
-        if (!isset($_SESSION)) {
-            session_start();
-        }
-
         $email = trim($_POST['f-email']);
         $email = stripslashes($email);
         $email = mysqli_real_escape_string($dbconn, $email);

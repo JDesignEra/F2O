@@ -9,10 +9,10 @@
                         <a href="about.php">About F2O</a>
                     </li>
                     <li>
-                        <small><a href="https://jdesignera.com">Joel Portfolio</a></small>
+                        <small><a href="https://jdesignera.com">Joel's Portfolio</a></small>
                     </li>
                 </ul>
-                
+
                 <hr class="hidden-md-up">
             </div>
 
@@ -22,22 +22,22 @@
                 <p>
                     F2O is a platform built specifically for freelancers and organisations in mind. Addionally, F2O provides organisation a platform to hire freelancers, and a platform for freelancers to get hired.
                 </p>
-                
+
                 <hr class="hidden-md-up">
             </div>
-            
+
             <!-- Third Col -->
             <div class="col-md-5">
-                <h6 class="title">ABOUT JOEL</h6> 
+                <h6 class="title">ABOUT F2O FOUNDER</h6>
                 <p>
                     I am a Freelance Full-Stack Developer and Designer with my branding, <a href="https://jdesignera.com"><u>J.Design</u></a>. I have been in this industry since approximately 2012. Additionally, I am skilled in various programming languages and design skills.
                 </p>
             </div>
         </div>
     </div>
-    
+
     <hr>
-    
+
     <!-- Social buttons -->
     <div class="social-section">
         <ul>
@@ -63,13 +63,13 @@
         </ul>
     </div>
     <!-- /.Social buttons -->
-    
+
     <hr>
-    
+
     <div id="footer-cc" class="container-fluid">
         <div class="row">
             <!-- Third Col -->
-            <div class="col-md-12 text-center">               
+            <div class="col-md-12 text-center">
                 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
                     <img src="assets/img/creative-common/cc.png" width="30px" alt="CC" data-toggle="tooltip" data-placement="top" title="Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International">
                     <img src="assets/img/creative-common/by.png" width="30px" alt="BY" data-toggle="tooltip" data-placement="top" title="Attribution">
@@ -83,9 +83,9 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Copyright -->
-    <div class="footer-copyright">        
+    <div class="footer-copyright">
         <div class="container-fluid">
             <small>
                 Copyright &copy; <?php echo date("Y"); ?> <a href="https://jdesignera.com">Joel</a>

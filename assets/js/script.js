@@ -37,4 +37,30 @@ $(document).ready(function () {
     $('#a-fgtpass').on('click', function () {
         $('#tab-fgtpass').tab('show');
     });
+
+    $('nav.php').ready(function() {
+        $('header nav div.logged.dropdown div.dropdown-menu a#logout').on('click', function() {
+            $.ajax({
+                url: 'assets/php/logout.php',
+                type: 'POST',
+                dataType: 'json',
+                success: function(data) {
+                    console.log(data);      // Debugging Purpose
+
+                    if (data == 'pass') {
+                        toastr.success('Logged out successfully');
+
+                        setTimeout(function () {
+    						document.location.href="/";
+    					}, 600);
+                    }
+                }
+            });
+        });
+    });
+
+    $('a#view-profile').on('click', function() {
+        var result = $(this).attr('value');
+        window.location = 'user.php?' + result;
+    });
 });

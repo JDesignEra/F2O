@@ -1,6 +1,3 @@
-<!--FUTURE Add Register, Login & Forgot Password functions-->
-<!--FUTURE Populate Newest F2O Members section-->
-
 <!DOCTYPE html>
 <html lang="en">
     <!-- Head, Navigation & Intro Section -->
@@ -8,7 +5,7 @@
         include('assets/modular/head.php');
     ?>
 
-    <body>
+    <body id="home">
         <!-- Navigation & Intro -->
         <header>
             <!-- Navigation Menu -->
@@ -62,64 +59,66 @@
                                             <a class="btn-floating btn-small btn-action rotate-btn light-blue" data-card="intro-card" data-toggle="tooltip" data-placement="left" title="Login"><i class="fa fa-sign-in"></i></a>
 
                                             <!-- Content -->
-                                            <div class="content">
-                                                <h4><i class="fa fa-user-plus"></i> Register</h4>
-                                                <hr>
-                                                <div class="md-form">
-                                                    <i class="fa fa-user prefix"></i>
-                                                    <input type="text" id="r-name" class="form-control" required>
-                                                    <label for="r-name">Name</label>
-                                                </div>
-                                                <div class="md-form">
-                                                    <i class="fa fa-envelope prefix"></i>
-                                                    <input type="email" id="r-email" class="form-control" required>
-                                                    <label for="r-email">Email</label>
-                                                </div>
+                                            <form id="home-regForm" method="post">
+                                                <div class="content">
+                                                    <h4><i class="fa fa-user-plus"></i> Register</h4>
+                                                    <hr>
+                                                    <div class="md-form">
+                                                        <i class="fa fa-user prefix"></i>
+                                                        <input type="text" id="r-name" class="form-control" name="r-name" required>
+                                                        <label for="r-name">Name</label>
+                                                    </div>
+                                                    <div class="md-form">
+                                                        <i class="fa fa-envelope prefix"></i>
+                                                        <input type="email" id="r-email" class="form-control" name="r-email" required>
+                                                        <label for="r-email">Email</label>
+                                                    </div>
 
-                                                <div class="md-form">
-                                                    <i class="fa fa-lock prefix"></i>
-                                                    <input type="password" id="r-pass" class="form-control" required>
-                                                    <label for="r-pass">Password</label>
-                                                </div>
+                                                    <div class="md-form">
+                                                        <i class="fa fa-lock prefix"></i>
+                                                        <input type="password" id="r-pass" class="form-control" name="r-pass" required>
+                                                        <label for="r-pass">Password</label>
+                                                    </div>
 
-                                                <div class="text-center">
-                                                    <button class="btn teal">Register</button>
-                                                </div>
+                                                    <div class="text-center">
+                                                        <button class="btn teal">Register</button>
+                                                    </div>
 
-                                                <div class="text-center red-text">
-                                                    *<small>Organisation do not require an account to hire freelancers.</small>
+                                                    <div class="text-center red-text">
+                                                        *<small>Organisation do not require an account to hire freelancers.</small>
+                                                    </div>
                                                 </div>
-                                            </div>
-
+                                            </form>
                                         </div>
                                         <!-- /.Front Side -->
 
                                         <!-- Back Side -->
                                         <div class="face back z-depth-1 hoverable">
-                                            <!-- Content -->
-                                            <div class="content">
-                                                <h4><i class="fa fa-sign-in"></i> Login</h4>
-                                                <a><i class="fa fa-close rotate-btn" data-card="intro-card"></i></a>
+                                            <form id="home-loginForm" method="post">
+                                                <!-- Content -->
+                                                <div class="content">
+                                                    <h4><i class="fa fa-sign-in"></i> Login</h4>
+                                                    <a><i class="fa fa-close rotate-btn" data-card="intro-card"></i></a>
 
-                                                <hr class="hr-pad">
+                                                    <hr class="hr-pad">
 
-                                                <div class="md-form">
-                                                    <i class="fa fa-envelope prefix"></i>
-                                                    <input type="email" id="l-email" class="form-control">
-                                                    <label for="l-email">Email</label>
+                                                    <div class="md-form">
+                                                        <i class="fa fa-envelope prefix"></i>
+                                                        <input type="email" id="l-email" name="l-email" class="form-control">
+                                                        <label for="l-email">Email</label>
+                                                    </div>
+
+                                                    <div class="md-form">
+                                                        <i class="fa fa-lock prefix"></i>
+                                                        <input type="password" id="l-pass" name="l-pass" class="form-control">
+                                                        <label for="l-pass">Password</label>
+                                                    </div>
+
+                                                    <div class="text-center">
+                                                        <button class="btn btn-secondary">Login</button>
+                                                    </div>
                                                 </div>
-
-                                                <div class="md-form">
-                                                    <i class="fa fa-lock prefix"></i>
-                                                    <input type="password" id="l-pass" class="form-control">
-                                                    <label for="l-pass">Password</label>
-                                                </div>
-
-                                                <div class="text-center">
-                                                    <button class="btn btn-secondary">Login</button>
-                                                </div>
-                                            </div>
-
+                                            </form>
                                         </div>
                                         <!-- /.Back Side -->
 
@@ -137,9 +136,12 @@
 
         <!-- Main -->
         <main>
-            <section id="new-freelancer" class="section">
-                <h1 class="section-heading wow fadeIn">Newest F2O Members</h1>
-            </section>
+            <div class="container-fluid">
+                <section id="new-members" class="section">
+                    <h1 class="section-heading wow fadeIn">Newest F2O Members</h1>
+                    <hr class="between-sections">
+                </section>
+            </div>
         </main>
 
         <!-- Footer & Scripts -->

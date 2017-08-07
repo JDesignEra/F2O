@@ -156,3 +156,18 @@ footer.page-footer h6 {
 #home-intro .card-wrapper .hr-pad {
     padding-bottom: 2.7rem;
 }
+
+/* cp card */
+body#home #new-members.section #cp.card .card-up {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 200px;
+}
+
+body#home #new-members.section #cp.card .card-share .social-reveal,
+body#home #new-members.section #cp .card-share .social-reveal-active {
+    width: 75% !important;
+    right: 10px;
+    z-index: 0;
+}

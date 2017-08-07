@@ -40,7 +40,7 @@ $(document).ready(function() {
 
 					setTimeout(function() {
                         document.location.reload(true);
-                    }, 500);
+                    }, 600);
                 }
 				else if (data == 'fail') {
 					toastr.danger('Changes are not saved, contact F2O support');
@@ -74,7 +74,7 @@ $(document).ready(function() {
 
                     setTimeout(function() {
                         document.location.reload(true);
-                    }, 500);
+                    }, 600);
                 }
             }
         });
@@ -117,7 +117,7 @@ $(document).ready(function() {
 
                     setTimeout(function() {
                         document.location.reload(true);
-                    }, 500);
+                    }, 600);
                 }
             }
         });
@@ -163,7 +163,7 @@ $(document).ready(function() {
 
 					setTimeout(function () {
 						document.location.reload(true);
-					}, 500);
+					}, 600);
 				}
 			}
 		});
@@ -248,7 +248,6 @@ $(document).ready(function() {
         e.preventDefault();
 
         var result = $('#profile form#skills-form').serialize();
-        console.log(result);
 
         $.ajax({
             type: 'POST',
@@ -295,7 +294,7 @@ $(document).ready(function() {
 
                     setTimeout(function () {
 						document.location.reload(true);
-					}, 500);
+					}, 600);
                 }
                 else if (data == 'fail') {
                     toastr.danger('Skill(s) has not been deleted, please try again');
@@ -348,6 +347,64 @@ $(document).ready(function() {
         });
     });
     // /.Skills Form
+
+    // Upload Profile Photo
+    $('#profile div#upload-avatar-modal form#avatar-form').submit(function(e) {
+        e.preventDefault();
+
+        $.ajax({
+            url: 'assets/php/uploadAvatar.php',
+            type: "POST",
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData:false,
+            success: function(data) {
+                //console.log(data);      // Debugging Purpose
+
+                if (data == 'pass') {
+                    toastr.success('Profile photo changed successfully');
+
+                    setTimeout(function () {
+						document.location.reload(true);
+					}, 600);
+                }
+                else if (data == 'fail') {
+                    toastr.error('Invalid file size or type');
+                }
+            }
+        });
+    });
+    // /.Upload Profile Photo
+
+    // Upload Cover Photo
+    $('#profile form#cover-photo-form').submit(function(e) {
+        e.preventDefault();
+
+        $.ajax({
+            url: 'assets/php/uploadCover.php',
+            type: "POST",
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData:false,
+            success: function(data) {
+                //console.log(data);      // Debugging Purpose
+
+                if (data == 'pass') {
+                    toastr.success('Cover photo changed successfully');
+
+                    setTimeout(function () {
+						document.location.reload(true);
+					}, 600);
+                }
+                else if (data == 'fail') {
+                    toastr.error('Invalid file size or type');
+                }
+            }
+        });
+    });
+    // /.Upload Cover Photo
     // /.AJAX
 
     // ANIMATION & APPERANCE FUNCTIONS
