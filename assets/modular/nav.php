@@ -1,9 +1,3 @@
-<?php
-    if (!isset($_SESSION)) {
-        session_start();
-    }
-?>
-
 <!-- Navbar -->
 <nav class="navbar navbar-toggleable-md fixed-top navbar-dark bg-primary scrolling-navbar z-depth-1 hoverable">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle Navigation">
@@ -17,13 +11,13 @@
 
     <div class="collapse navbar-collapse" id="nav">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item <?php if ($_SERVER['REQUEST_URI'] == '/index.php') {echo 'active';} ?>">
+            <li class="nav-item <?php if (false !== strpos($_SERVER['REQUEST_URI'], '/index.php')) {echo 'active';} ?>">
                 <a class="nav-link" href="index.php">Home</a>
             </li>
-            <li class="nav-item <?php if ($_SERVER['REQUEST_URI'] == '/about.php') {echo 'active';} ?>">
+            <li class="nav-item <?php if (false !== strpos($_SERVER['REQUEST_URI'], '/about.php')) {echo 'active';} ?>">
                 <a class="nav-link" href="about.php">About</a>
             </li>
-            <li class="nav-item <?php if ($_SERVER['REQUEST_URI'] == '/freelancers.php') {echo 'active';} ?>">
+            <li class="nav-item <?php if (false !== strpos($_SERVER['REQUEST_URI'], '/freelancers.php')) {echo 'active';} ?>">
                 <a class="nav-link" href="freelancers.php">Freelancers</a>
             </li>
         </ul>

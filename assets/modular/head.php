@@ -24,7 +24,7 @@
     <link href="assets/framework/css/mdb.min.css" rel="stylesheet" />
 
     <!-- Style -->
-    <?php if ($_SERVER['REQUEST_URI'] == "/index.php" || $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] == "localhost/"): ?>
+    <?php if (false !== strpos($_SERVER['REQUEST_URI'], '/index.php') || $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] == "localhost/"): ?>
         <link href="assets/css/home-style.css" rel="stylesheet" />
     <?php else: ?>
         <link href="assets/css/style.css" rel="stylesheet" />

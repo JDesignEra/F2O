@@ -23,15 +23,15 @@
     <script src="assets/js/getProfile.js" type="text/javascript"></script>
 <?php endif; ?>
 
-<?php if($_SERVER['REQUEST_URI'] == "/index.php" || $_SERVER['REQUEST_URI'] == "/"): ?>
+<?php if(false !== strpos($_SERVER['REQUEST_URI'], '/index.php') || false !== strpos($_SERVER['REQUEST_URI'], '/')): ?>
     <script src="assets/js/getNewestMembers.js" type="text/javascript"></script>
 <?php endif; ?>
 
-<?php if ($_SERVER['REQUEST_URI'] == "/profile.php"): ?>
+<?php if (false !== strpos($_SERVER['REQUEST_URI'], '/profile.php')): ?>
     <script src="assets/js/editProfile.js" type="text/javascript"></script>
 <?php endif; ?>
 
-<?php if ($_SERVER['REQUEST_URI'] == "/freelancers.php"): ?>
+<?php if (false !== strpos($_SERVER['REQUEST_URI'], '/freelancers.php')): ?>
     <script src="assets/js/filterSearch.js" type="text/javascript"></script>
     <script src="assets/js/getAllMembers.js" type="text/javascript"></script>
 <?php endif; ?>
