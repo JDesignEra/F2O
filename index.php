@@ -1,3 +1,5 @@
+<?php include('assets/php/sessionStart.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <!-- Head, Navigation & Intro Section -->
