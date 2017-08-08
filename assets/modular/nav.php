@@ -1,3 +1,9 @@
+<?php
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+?>
+
 <!-- Navbar -->
 <nav class="navbar navbar-toggleable-md fixed-top navbar-dark bg-primary scrolling-navbar z-depth-1 hoverable">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle Navigation">
